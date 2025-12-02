@@ -15,8 +15,6 @@ let streak = 0;
 const emojiDisplay = document.getElementById("emojiDisplay");
 const answerInput = document.getElementById("answerInput");
 const feedback = document.getElementById("feedback");
-const showAnswerBtn = document.getElementById("showAnswerBtn");
-const darkToggle = document.getElementById("darkModeToggle");
 
 function newPuzzle() {
     currentPuzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
@@ -25,8 +23,10 @@ function newPuzzle() {
     feedback.textContent = "";
 }
 
-answerInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") checkAnswer();
+answerInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        checkAnswer();
+    }
 });
 
 function checkAnswer() {
@@ -52,21 +52,5 @@ function checkAnswer() {
         streak = 0;
     }
 }
-
-showAnswerBtn.addEventListener("click", () => {
-    feedback.textContent = "The word was: " + currentPuzzle.answer;
-    streak = 0;
-    setTimeout(newPuzzle, 1500);
-});
-
-darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        darkToggle.textContent = "Light Mode";
-    } else {
-        darkToggle.textContent = "Dark Mode";
-    }
-});
 
 newPuzzle();
