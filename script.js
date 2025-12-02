@@ -5,7 +5,12 @@ const puzzles = [
     { emoji: "📱🔋", answer: "phone battery", hint: "Keeps your device alive" },
     { emoji: "🪟🖥️", answer: "windows", hint: "Microsoft OS." },
     { emoji: "❌🧽", answer: "unscrub", hint: "Astrarune's game." },
-    { emoji: "😤🎮", answer: "steam", hint: "PC gaming platform" }
+    { emoji: "😤🎮", answer: "steam", hint: "PC gaming platform" },
+    { emoji: "👥🚢", answer: "friendship", hint: "No hint avaliable." },
+    { emoji: "📽️💻", answer: "movie", hint: "No hint avaliable." },
+    { emoji: "🔎⌨️", answer: "google", hint: "Popular search engine." },
+    { emoji: "🪨⭐", answer: "rockstar", hint: "Created Grand Theft Auto." },
+    { emoji: "🍕🎉", answer: "pizza party", hint: "🎉 means party." }
 ];
 
 let currentPuzzle = null;
