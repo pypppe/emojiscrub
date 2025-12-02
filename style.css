@@ -35,3 +35,10 @@ body {
 body, input, button, .feedback {
     font-family: 'Poppins', Arial, sans-serif;
 }
+
+.hint {
+    font-size: 18px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
