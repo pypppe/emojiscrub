@@ -10,6 +10,7 @@ const puzzles = [
     { emoji: "📽️💻", answer: "movie", hint: "No hint avaliable." },
     { emoji: "🔎⌨️", answer: "google", hint: "Popular search engine." },
     { emoji: "🪨⭐", answer: "rockstar", hint: "Created Grand Theft Auto." },
+    { emoji: "🔑😺", answer: "kitkat", hint: "Chocolate brand. 🔑 means Kit" },
     { emoji: "🍕🎉", answer: "pizza party", hint: "🎉 means party." }
 ];
 
