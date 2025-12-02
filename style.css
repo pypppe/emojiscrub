@@ -1,14 +1,42 @@
+/* ----- BASE ----- */
 body {
     margin: 0;
     background: white;
+    color: black;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
 }
 
+/* ----- DARK MODE ----- */
+body.dark {
+    background: #111;
+    color: white;
+}
+
+body.dark input {
+    background: #222;
+    color: white;
+    border: 2px solid #fff;
+}
+
+body.dark .show-answer {
+    background: #333;
+    color: white;
+    border: 2px solid white;
+}
+
+body.dark .dark-toggle {
+    background: #444;
+    color: white;
+    border: 2px solid white;
+}
+
+/* ----- ELEMENTS ----- */
 .container {
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -22,12 +50,33 @@ body {
     width: 250px;
     font-size: 18px;
     border: 2px solid #000;
-    border-radius: 0; /* sharp corners */
+    border-radius: 0;
     outline: none;
+}
+
+.show-answer {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: 2px solid #000;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0;
 }
 
 .feedback {
     margin-top: 20px;
     font-size: 22px;
     font-weight: bold;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    border: 2px solid #000;
+    background: white;
+    cursor: pointer;
+    border-radius: 0;
 }
