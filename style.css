@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.emoji {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#answerInput {
+    padding: 10px;
+    width: 250px;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 0; /* sharp corners */
+    outline: none;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
