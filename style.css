@@ -49,16 +49,16 @@ body, input, button, .feedback {
   transform: translateX(-50%);
   opacity: 0.5;
   font-size: 13px;
-  color: #000000;
+  color: #000000; 
   font-family: 'Poppins', sans-serif;
   text-align: center;
   z-index: 999;
   pointer-events: auto;
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .announcement a {
-  color: white;
+  color: #000000;
   text-decoration: none;
   pointer-events: auto;
 }
@@ -67,10 +67,9 @@ body, input, button, .feedback {
   color: #000000;
 }
 
-
 .announcement-icon {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
