@@ -42,3 +42,35 @@ body, input, button, .feedback {
     margin-bottom: 10px;
 }
 
+.announcement {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 13px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  z-index: 999;
+  pointer-events: auto;
+    text-decoration: underline;
+}
+
+.announcement a {
+  color: white;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.announcement a:hover {
+  color: #f0f0f0;
+}
+
+
+.announcement-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
