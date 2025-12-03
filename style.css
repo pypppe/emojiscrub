@@ -73,3 +73,30 @@ body, input, button, .feedback {
   vertical-align: middle;
   margin-right: 8px;
 }
+
+#howToPlayBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#howToPlayBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+#howToPlayBtn:active {
+  transform: scale(0.97);
+}
