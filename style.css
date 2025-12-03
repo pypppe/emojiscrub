@@ -49,7 +49,7 @@ body, input, button, .feedback {
   transform: translateX(-50%);
   opacity: 0.5;
   font-size: 13px;
-  color: #fff;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   z-index: 999;
@@ -64,7 +64,7 @@ body, input, button, .feedback {
 }
 
 .announcement a:hover {
-  color: #f0f0f0;
+  color: #000000;
 }
 
 
