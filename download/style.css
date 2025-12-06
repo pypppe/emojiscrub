@@ -1,0 +1,90 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.platform {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.platform h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .platforms {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .platform {
+    width: 45%;
+    text-align: center;
+  }
+
+  .button {
+    width: auto;
+  }
+}
