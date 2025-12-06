@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const goBackBtn = document.getElementById('goBackBtn');
     goBackBtn.addEventListener('click', () => {
-      window.location.href = 'https://emoji.astrarune.com';
+      window.location.href = 'https://escrub.astrarune.com';
     });
   }
 });
@@ -74,5 +74,5 @@ signUpBtn.addEventListener('click', () => {
 continueBtn.addEventListener('click', () => {
   localStorage.setItem('betaAccepted', 'true');
   popup.style.display = 'none';
-  window.location.href = 'https://emoji.astrarune.com';
+  window.location.href = 'https://escrub.astrarune.com';
 });
