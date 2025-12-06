@@ -40,6 +40,8 @@ function newPuzzle() {
     currentPuzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
     emojiDisplay.textContent = currentPuzzle.emoji;
 
+    twemoji.parse(emojiDisplay);
+
     hintDisplay.textContent = currentPuzzle.hint || "";
 
     answerInput.value = "";
