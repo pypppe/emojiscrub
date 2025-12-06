@@ -16,7 +16,7 @@ const puzzles = [
     { emoji: "👽🎮", answer: "alienware", hint: "🎮 means ware." },
     { emoji: "🧑‍💻💾", answer: "programming", hint: "Writing code." },
     { emoji: "🍔🍟", answer: "fast food", hint: "Quick meals you eat on the go." },
-    { emoji: "🏫📱", answer: "school phone", hint: "Usually banned in schools." },
+    { emoji: "ℹ️📱", answer: "school phone", hint: "The company that owns this device is named after a fruit." },
     { emoji: "🍩👨‍🍳", answer: "homer simpson", hint: "From The Simpsons." },
     { emoji: "🎬💤", answer: "movie night", hint: "💤 means night." },
     { emoji: "😺🐟", answer: "catfish", hint: "A type of internet scam or a fish." },
