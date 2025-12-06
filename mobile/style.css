@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.emoji {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+#answerInput {
+    padding: 15px;
+    width: 250px;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 0;
+    outline: none;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+body, input, button, .feedback {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.hint {
+    font-size: 18px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+.announcement {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 13px;
+  color: #000000; 
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  z-index: 999;
+  pointer-events: auto;
+  text-decoration: underline;
+}
+
+.announcement a {
+  color: #000000;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.announcement a:hover {
+  color: #000000;
+}
+
+.announcement-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
