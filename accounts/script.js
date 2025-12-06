@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const goBackBtn = document.getElementById('goBackBtn');
     goBackBtn.addEventListener('click', () => {
-      window.location.href = 'https://unscrub.astrarune.com';
+      window.location.href = 'https://emoji.astrarune.com';
     });
   }
 });
@@ -36,7 +36,7 @@ usernameInput.addEventListener('input', () => {
   const value = usernameInput.value.trim();
 
   if (isUsernameBlacklisted(value)) {
-    usernameFeedback.textContent = 'This username is not allowed on Unscrub.';
+    usernameFeedback.textContent = 'This username is not allowed on Emojiscrub.';
     usernameFeedback.className = 'feedback blacklist';
     signUpBtn.disabled = true;
     return;
@@ -74,5 +74,5 @@ signUpBtn.addEventListener('click', () => {
 continueBtn.addEventListener('click', () => {
   localStorage.setItem('betaAccepted', 'true');
   popup.style.display = 'none';
-  window.location.href = 'https://unscrub.astrarune.com';
+  window.location.href = 'https://emoji.astrarune.com';
 });
