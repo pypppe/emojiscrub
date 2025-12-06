@@ -6,13 +6,27 @@ const puzzles = [
     { emoji: "🪟🖥️", answer: "windows", hint: "Microsoft OS." },
     { emoji: "❌🧽", answer: "unscrub", hint: "Astrarune's game." },
     { emoji: "😤🎮", answer: "steam", hint: "PC gaming platform" },
-    { emoji: "👥🚢", answer: "friendship", hint: "No hint avaliable." },
-    { emoji: "📽️💻", answer: "movie", hint: "No hint avaliable." },
+    { emoji: "👥🚢", answer: "friendship", hint: "No hint available." },
+    { emoji: "📽️💻", answer: "movie", hint: "No hint available." },
     { emoji: "🔎⌨️", answer: "google", hint: "Popular search engine." },
     { emoji: "🪨⭐", answer: "rockstar", hint: "Created Grand Theft Auto." },
     { emoji: "🔑😺", answer: "kitkat", hint: "Chocolate brand. 🔑 means Kit" },
-    { emoji: "🍕🎉", answer: "pizza party", hint: "🎉 means party." }
+    { emoji: "🍕🎉", answer: "pizza party", hint: "🎉 means party." },
+    { emoji: "🐧💻", answer: "Linux", hint: "Open-source operating system." },
+    { emoji: "👽🎮", answer: "alienware", hint: "🎮 means ware." },
+    { emoji: "🧑‍💻💾", answer: "programming", hint: "Writing code." },
+    { emoji: "🍔🍟", answer: "fast food", hint: "Quick meals you eat on the go." },
+    { emoji: "🏫📱", answer: "school phone", hint: "Usually banned in schools." },
+    { emoji: "🍩👨‍🍳", answer: "homer simpson", hint: "From The Simpsons." },
+    { emoji: "🎬💤", answer: "movie night", hint: "💤 means night." },
+    { emoji: "😺🐟", answer: "catfish", hint: "A type of internet scam or a fish." },
+    { emoji: "💻🖱️", answer: "computer mouse", hint: "Used to point and click on a screen." },
+    { emoji: "🏎️💨", answer: "race car", hint: "Cars that go really fast." },
+    { emoji: "🎮👾", answer: "arcade", hint: "Place for gaming." },
+    { emoji: "🦄✨", answer: "unicorn", hint: "A magical creature." },
+    { emoji: "🕷️👨", answer: "spiderman", hint: "A superhero loved by kids." }
 ];
+
 
 let currentPuzzle = null;
 let streak = 0;
