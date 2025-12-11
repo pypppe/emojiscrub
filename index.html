@@ -50,5 +50,20 @@
 
 
     <script src="script.js"></script>
+<script>
+document.getElementById("answerInput").addEventListener("input", function () {
+    let value = this.value;
+
+    value = value.replace(/[^a-zA-Z ]/g, "");
+
+    const parts = value.split(" ");
+    if (parts.length > 2) {
+        value = parts.slice(0, 2).join(" ");
+    }
+
+    this.value = value;
+});
+</script>
+
 </body>
 </html>
