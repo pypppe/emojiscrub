@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 12px;
+}
+
+.container {
+    text-align: center;
+}
+
+.emoji {
+    font-size: 50px;
+    margin-bottom: 6px;
+}
+
+#answerInput {
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    border: 2px solid #000;
+    border-radius: 0;
+    outline: none;
+}
+
+.feedback {
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body, input, button, .feedback {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.hint {
+    font-size: 14px;
+    opacity: 0.5;
+    margin-bottom: 6px;
+}
+
+.announcement {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 10px;
+  color: #000000; 
+  text-align: center;
+  z-index: 999;
+  pointer-events: auto;
+  text-decoration: underline;
+}
+
+.announcement a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.announcement-icon {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#howToPlayBtn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#howToPlayBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+#howToPlayBtn:active {
+  transform: scale(0.97);
+}
+
+#signUpBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#signUpBtn:hover {
+  background-color: #195bc8;
+  transform: translateY(-1px);
+}
+
+#signUpBtn:active {
+  transform: scale(0.97);
+}
+
+#signUpBtn svg {
+  width: 12px;
+  height: 12px;
+  fill: #ffffff;
+  vertical-align: middle;
+}
