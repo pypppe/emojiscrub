@@ -24,6 +24,8 @@ const puzzles = [
     { emoji: "🏎️💨", answer: "race car", hint: "Cars that go really fast." },
     { emoji: "🎮👾", answer: "arcade", hint: "Place for gaming." },
     { emoji: "🦄✨", answer: "unicorn", hint: "A magical creature." },
+    { emoji: "🕯️🎂", answer: "birthday", hint: "This happens on the day when someone was born." },
+    { emoji: "🎅🎄", answer: "christmas", hint: "Happens on December 24th or 25th." },
     { emoji: "🕷️👨", answer: "spiderman", hint: "A superhero loved by kids." }
 ];
 
