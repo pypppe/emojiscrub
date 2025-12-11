@@ -101,6 +101,19 @@ body, input, button, .feedback {
   transform: scale(0.97);
 }
 
+#howToPlayBtn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#howToPlayBtn .icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+}
+
+
 #signUpBtn {
   position: absolute;
   top: 20px;
