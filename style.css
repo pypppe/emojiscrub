@@ -148,31 +148,18 @@ body, input, button, .feedback {
   vertical-align: middle;
 }
 
-.x-fixed-icon {
+.twitter-icon {
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    z-index: 999999999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: white;
-    border-radius: 12px;
-    padding: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 45px;
+    height: 45px;
+    z-index: 9999;
 }
 
-.x-fixed-icon svg {
+.twitter-icon svg {
     width: 100%;
     height: 100%;
     fill: #00AAEC;
-    display: block;
-}
-
-.x-fixed-icon:hover svg {
-    transform: scale(1.1);
 }
