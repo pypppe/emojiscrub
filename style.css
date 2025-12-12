@@ -151,7 +151,7 @@ body, input, button, .feedback {
 .twitter-icon {
     position: fixed;
     bottom: 30px;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
     z-index: 9999;
     width: 48px;
