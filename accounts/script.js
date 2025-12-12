@@ -9,7 +9,7 @@ const continueBtn = document.getElementById('continueBtn');
 const hasAccepted = localStorage.getItem('betaAccepted');
 
 function isUsernameBlacklisted(name) {
-  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily', 'faggot', 'tranny', 'nazi', 'hitler', 'nigger', 'nigga', 'emojiscrub', 'escrub', 'android', 'apple', 'dyke', 'retard', 'fuck', 'shit', 'cock', 'whore', 'porn', 'terrorist'];
+  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily']; 
   for (const term of blacklist) {
     if (name.toLowerCase().includes(term)) {
       return true;
@@ -92,36 +92,18 @@ function updateButtonState() {
   const validPass = validatePassword();
   signUpBtn.disabled = !(validUser && validPass);
 }
+
 window.addEventListener("DOMContentLoaded", () => {
   if (hasAccepted) {
     const container = document.querySelector('.container');
     container.innerHTML = `
       <h2>You've already made an account.</h2>
       <button id="goBackBtn">Go Back</button>
-      <button id="logoutBtn" style="margin-left: 10px;">Log Out</button>
     `;
 
     const goBackBtn = document.getElementById('goBackBtn');
-    const logoutBtn = document.getElementById('logoutBtn');
-    const logoutPopup = document.getElementById('logoutPopup');
-    const logoutConfirm = document.getElementById('logoutConfirm');
-    const logoutCancel = document.getElementById('logoutCancel');
-
     goBackBtn.addEventListener('click', () => {
       window.location.href = 'https://escrub.astrarune.com';
-    });
-
-    logoutBtn.addEventListener('click', () => {
-      logoutPopup.style.display = 'flex';
-    });
-
-    logoutCancel.addEventListener('click', () => {
-      window.location.href = 'https://escrub.astrarune.com';
-    });
-
-    logoutConfirm.addEventListener('click', () => {
-      localStorage.clear();
-      window.location.href = 'https://escrub.astrarune.com/accounts';
     });
   }
 });
