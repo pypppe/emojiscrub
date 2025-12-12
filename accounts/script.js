@@ -1,6 +1,7 @@
 const usernameInput = document.getElementById('username');
 const usernameFeedback = document.getElementById('usernameFeedback');
 const passwordInput = document.getElementById('password');
+const passwordFeedback = document.getElementById('passwordFeedback');
 const signUpBtn = document.getElementById('signUpBtn');
 const popup = document.getElementById('popup');
 const continueBtn = document.getElementById('continueBtn');
@@ -8,7 +9,7 @@ const continueBtn = document.getElementById('continueBtn');
 const hasAccepted = localStorage.getItem('betaAccepted');
 
 function isUsernameBlacklisted(name) {
-  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily', 'faggot', 'tranny', 'nigger', 'nigga', 'hitler', 'nazi', 'fuck', 'bitch', 'shit', 'cock', 'porn', 'goon', 'penis', 'vagina', 'niger', 'nigeria'];
+  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily', 'faggot', 'tranny', 'nazi', 'hitler', 'nigger', 'nigga', 'emojiscrub', 'escrub', 'android', 'apple', 'dyke', 'retard', 'fuck', 'shit', 'cock', 'whore', 'porn', 'terrorist'];
   for (const term of blacklist) {
     if (name.toLowerCase().includes(term)) {
       return true;
@@ -17,14 +18,89 @@ function isUsernameBlacklisted(name) {
   return false;
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+function validateUsername() {
+  const value = usernameInput.value.trim();
+  
+  if (!/^[a-zA-Z0-9]+$/.test(value)) {
+    usernameFeedback.textContent = "Only letters and numbers allowed.";
+    usernameFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (isUsernameBlacklisted(value)) {
+    usernameFeedback.textContent = "This username is not allowed on Emojiscrub.";
+    usernameFeedback.className = "feedback blacklist";
+    return false;
+  }
+
+  if (value.length < 3) {
+    usernameFeedback.textContent = "Username too short.";
+    usernameFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (value.length > 30) {
+    usernameFeedback.textContent = "";
+    return false;
+  }
+
+  usernameFeedback.textContent = "This username is available.";
+  usernameFeedback.className = "feedback success";
+  return true;
+}
+
+function validatePassword() {
+  const pw = passwordInput.value;
+
+  if (pw.length === 0) {
+    passwordFeedback.textContent = "Enter password.";
+    passwordFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (pw.includes(" ")) {
+    passwordFeedback.textContent = "Password cannot contain spaces.";
+    passwordFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (pw.length < 10) {
+    passwordFeedback.textContent = "Password must be at least 10 characters.";
+    passwordFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (pw.length > 35) {
+    passwordFeedback.textContent = "Password cannot exceed 35 characters.";
+    passwordFeedback.className = "feedback error";
+    return false;
+  }
+
+  if (!/[!@#$%^&*()_\-\+=\{}\[\]:;"'<>,.?/~`]/.test(pw)) {
+    passwordFeedback.textContent = "Password must include at least one special symbol.";
+    passwordFeedback.className = "feedback error";
+    return false;
+  }
+
+  passwordFeedback.textContent = "";
+  passwordFeedback.className = "feedback success";
+  return true;
+}
+
+function updateButtonState() {
+  const validUser = validateUsername();
+  const validPass = validatePassword();
+  signUpBtn.disabled = !(validUser && validPass);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
   if (hasAccepted) {
     const container = document.querySelector('.container');
     container.innerHTML = `
       <h2>You've already made an account.</h2>
       <button id="goBackBtn">Go Back</button>
     `;
-    
+
     const goBackBtn = document.getElementById('goBackBtn');
     goBackBtn.addEventListener('click', () => {
       window.location.href = 'https://escrub.astrarune.com';
@@ -32,37 +108,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-usernameInput.addEventListener('input', () => {
-  const value = usernameInput.value.trim();
-
-  if (isUsernameBlacklisted(value)) {
-    usernameFeedback.textContent = 'This username is not allowed on Emojiscrub.';
-    usernameFeedback.className = 'feedback blacklist';
-    signUpBtn.disabled = true;
-    return;
-  }
-
-  if (value.length < 3) {
-    usernameFeedback.textContent = 'Username too short.';
-    usernameFeedback.className = 'feedback error';
-    signUpBtn.disabled = true;
-  } else if (value.length <= 30) {
-    usernameFeedback.textContent = 'This username is available.';
-    usernameFeedback.className = 'feedback success';
-    signUpBtn.disabled = false;
-  } else {
-    usernameFeedback.textContent = '';
-    signUpBtn.disabled = true;
-  }
-});
+usernameInput.addEventListener('input', updateButtonState);
+passwordInput.addEventListener('input', updateButtonState);
 
 signUpBtn.addEventListener('click', () => {
-  const value = usernameInput.value.trim();
-
-  if (isUsernameBlacklisted(value)) {
-    alert("This username is blacklisted. Please choose another.");
-    return;
-  }
+  if (!validateUsername() || !validatePassword()) return;
 
   if (!hasAccepted) {
     popup.style.display = 'flex';
