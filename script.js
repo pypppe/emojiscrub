@@ -30,7 +30,7 @@ const puzzles = [
     { emoji: "⭐🌍", answer: "europe", hint: "A contient alot of countries are in." },
     { emoji: "🟥⬜", answer: "poland", hint: "A country that created vodka, and is in Europe." },
     { emoji: "🍎👩‍💻", answer: "imac", hint: "I love some MAC." },
-    { emoji: "🌌🍫", answer: "imac", hint: "Chocolate brand." },
+    { emoji: "🌌🍫", answer: "milkyway", hint: "Chocolate brand." },
     { emoji: "💬🟦", answer: "discord", hint: "Popular “Gaming” chat platform." },
     { emoji: "🟢🎶", answer: "spotify", hint: "Let's you listen to music." },
     { emoji: "🫵🧪", answer: "youtube", hint: "is that YOUr TUBE?" },
