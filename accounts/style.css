@@ -132,3 +132,33 @@ button:active {
 .feedback.blacklist {
   color: orange;
 }
+
+.requirements {
+  margin-top: 20px;
+  text-align: left;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.requirements h3 {
+  margin: 10px 0 5px;
+  font-size: 15px;
+}
+
+.requirements ul {
+  padding-left: 18px;
+  margin: 0 0 10px;
+}
+
+.requirements li {
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.requirements li.valid {
+  color: #3bd671;
+}
+
+.requirements li.invalid {
+  color: #ff5f5f;
+}
