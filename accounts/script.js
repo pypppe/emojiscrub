@@ -9,7 +9,7 @@ const continueBtn = document.getElementById('continueBtn');
 const hasAccepted = localStorage.getItem('betaAccepted');
 
 function isUsernameBlacklisted(name) {
-  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily']; 
+  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
   for (const term of blacklist) {
     if (name.toLowerCase().includes(term)) {
       return true;
