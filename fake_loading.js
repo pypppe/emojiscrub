@@ -38,8 +38,31 @@
     opacity: 0.5;
   `;
 
+  const skipBtn = document.createElement("button");
+  skipBtn.textContent = "Skip";
+  skipBtn.style.cssText = `
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  `;
+
+  skipBtn.onclick = () => {
+    overlay.style.opacity = "0";
+    setTimeout(() => overlay.remove(), 600);
+  };
+
   container.appendChild(title);
   container.appendChild(subtitle);
+  overlay.appendChild(skipBtn);
   overlay.appendChild(container);
   document.body.appendChild(overlay);
 
