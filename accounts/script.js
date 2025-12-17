@@ -22,7 +22,7 @@ function validateUsername() {
   const value = usernameInput.value.trim();
   
   if (!/^[a-zA-Z0-9]+$/.test(value)) {
-    usernameFeedback.textContent = "Only letters and numbers allowed.";
+    usernameFeedback.textContent = "Username doesn't meet requirements.";
     usernameFeedback.className = "feedback error";
     return false;
   }
@@ -59,13 +59,13 @@ function validatePassword() {
   }
 
   if (pw.includes(" ")) {
-    passwordFeedback.textContent = "Password cannot contain spaces.";
+    passwordFeedback.textContent = "Password does not meet requirements.";
     passwordFeedback.className = "feedback error";
     return false;
   }
 
   if (pw.length < 10) {
-    passwordFeedback.textContent = "Password must be at least 10 characters.";
+    passwordFeedback.textContent = "Password must be at least 10 characters long.";
     passwordFeedback.className = "feedback error";
     return false;
   }
