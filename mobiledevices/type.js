@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  if (localStorage.getItem("disableTyping") === "true") return;
+
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
   const context = new AudioCtx();
   let audioBuffer;
@@ -16,6 +18,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.addEventListener("touchstart", unlock, { once: true });
 
   const playSound = () => {
+    if (localStorage.getItem("disableTyping") === "true") return;
+
     const source = context.createBufferSource();
     source.buffer = audioBuffer;
     source.playbackRate.value = 0.9 + Math.random() * 0.2;
@@ -28,8 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   document.querySelectorAll("input[type='text'], textarea").forEach(el => {
-    el.addEventListener("input", () => {
-      playSound();
-    });
+    el.addEventListener("input", playSound);
   });
 });
