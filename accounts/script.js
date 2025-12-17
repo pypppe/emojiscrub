@@ -98,12 +98,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     container.innerHTML = `
       <h2>You've already made an account.</h2>
-      <button id="goBackBtn">Go Back</button>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button id="goBackBtn">Go Back</button>
+        <button id="logoutBtn">Log Out</button>
+      </div>
     `;
 
-    const goBackBtn = document.getElementById('goBackBtn');
-    goBackBtn.addEventListener('click', () => {
+    document.getElementById('goBackBtn').addEventListener('click', () => {
       window.location.href = 'https://escrub.astrarune.com';
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('betaAccepted');
+      location.reload();
     });
   }
 });
