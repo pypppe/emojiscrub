@@ -135,7 +135,7 @@ button:active {
 
 .announcement {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.5;
