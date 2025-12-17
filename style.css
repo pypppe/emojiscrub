@@ -165,3 +165,21 @@ body, input, button, .feedback {
     transform: scale(0.80) translate(-300px, -150px);
     transform-origin: top left;
 }
+
+.settings-btn {
+    position: absolute;
+top: 20px;
+right: 60px;
+
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
