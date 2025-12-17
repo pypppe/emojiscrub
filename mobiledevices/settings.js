@@ -45,7 +45,17 @@ panel.innerHTML = `
   </div>
 
   <button id="resetSettings">Reset Settings</button>
+
+  <div style="
+    margin-top: 10px;
+    font-size: 12px;
+    color: #f5d742;
+    text-align: center;
+  ">
+    Restart app to apply changes.
+  </div>
 `;
+
 
 const style = document.createElement("style");
 style.textContent = `
