@@ -133,7 +133,7 @@ body, input, button, .feedback {
 }
 
 #signUpBtn:hover {
-  background-color: #195bc8;
+  background-color: #333333;
   transform: translateY(-1px);
 }
 
