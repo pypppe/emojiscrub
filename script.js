@@ -15,7 +15,7 @@ const puzzles = [
     { emoji: "🐧💻", answer: "Linux", hint: "Open-source operating system." },
     { emoji: "👽🎮", answer: "alienware", hint: "🎮 means ware." },
     { emoji: "🧑‍💻💾", answer: "programming", hint: "Writing code." },
-    { emoji: "🏃🍇", answer: "fast food", hint: "Quick meals you eat on the go." },
+    { emoji: "🏃🍔", answer: "fast food", hint: "Quick meals you eat on the go." },
     { emoji: "ℹ️📱", answer: "iphone", hint: "The company that owns this device is named after a fruit." },
     { emoji: "🍩👨‍🍳", answer: "homer simpson", hint: "From The Simpsons." },
     { emoji: "🎬💤", answer: "movie night", hint: "💤 means night." },
@@ -25,8 +25,18 @@ const puzzles = [
     { emoji: "🎮👾", answer: "arcade", hint: "Place for gaming." },
     { emoji: "🦄✨", answer: "unicorn", hint: "A magical creature." },
     { emoji: "🕯️🎂", answer: "birthday", hint: "This happens on the day when someone was born." },
-    { emoji: "🎅🎄", answer: "christmas", hint: "Happens on December 24th or 25th." },
-    { emoji: "🕷️👨", answer: "spiderman", hint: "A superhero loved by kids." }
+    { emoji: "🎅🎄", answer: "christmas", hint: "Happens on December 25th." },
+    { emoji: "🕷️👨", answer: "spiderman", hint: "A superhero loved by kids." },
+    { emoji: "⭐🌍", answer: "europe", hint: "A contient alot of countries are in." },
+    { emoji: "🟥⬜", answer: "poland", hint: "A country that created vodka, and is in Europe." },
+    { emoji: "🍎👩‍💻", answer: "imac", hint: "I love some MAC." },
+    { emoji: "🌌🍫", answer: "imac", hint: "Chocolate brand." },
+    { emoji: "💬🟦", answer: "discord", hint: "Popular “Gaming” chat platform." },
+    { emoji: "🟢🎶", answer: "spotify", hint: "Let's you listen to music." },
+    { emoji: "🫵🧪", answer: "youtube", hint: "is that YOUr TUBE?" },
+    { emoji: "🍫🥛", answer: "chocolate milk", hint: "Usually have this on Winter, to have a nice warm drink." },
+    { emoji: "🥖🗼", answer: "france", hint: "This country is in europe, near UK." },
+    { emoji: "🌍❌", answer: "brexit", hint: "Britain + Exit = Br..." }
 ];
 
 
