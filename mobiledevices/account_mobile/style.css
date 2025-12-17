@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body, input, button, h1, label {
+  font-family: 'Poppins', "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 480px;
+  text-align: center;
+  background: #f7f7f7;
+  padding: 40px;
+  border-radius: 0;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.beta-text {
+  font-size: 0.8rem;
+  color: rgba(26, 26, 26, 0.5);
+}
+
+.input-section {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease all;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #1f6feb;
+  box-shadow: 0 0 0 2px rgba(31, 111, 235, 0.3);
+  background-color: #f1f1f1;
+}
+
+button {
+  background-color: #1f6feb;
+  color: #fff;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 12px 25px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #195bc8;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.feedback {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
+
+.feedback.success {
+  color: #4CAF50;
+}
+
+.feedback.error {
+  color: #FF4C4C;
+}
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.popup-container h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.popup-container p {
+  font-size: 1rem;
+}
+
+.feedback.blacklist {
+  color: orange;
+}
+
+.announcement {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 13px;
+  color: #000000; 
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  z-index: 999;
+  pointer-events: auto;
+  text-decoration: underline;
+}
+
+.announcement a {
+  color: #000000;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.announcement a:hover {
+  color: #000000;
+}
+
+.announcement-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
