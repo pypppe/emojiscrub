@@ -148,3 +148,21 @@ height: 42px;
     transform: scale(0.80) translate(-300px, -150px);
     transform-origin: top left;
 }
+
+.settings-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.settings-icon {
+    width: 18px;
+    height: 18px;
+}
+
