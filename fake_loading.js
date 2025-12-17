@@ -53,10 +53,14 @@
     await step("Loading Scripts.", 300);
     await step("Loading CSS", 600);
     await step("Loading Account System", 200);
+    await step("Generating random Puzzle...", 100);
+    await step("Checking Accounts...", 600);
+    await step("Polishing up...", 600);
     await step("Fixing some stuff..", 600);
+    await step("Loading Unity version...", 200);
     await step("Loading Twemoji...", 3000);
 
-    subtitle.textContent = "Loaded!";
+    subtitle.textContent = "Loaded, enjoy playing.";
 
     setTimeout(() => {
       overlay.style.opacity = "0";
