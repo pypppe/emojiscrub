@@ -97,11 +97,12 @@ body, input, button, .feedback {
 }
 
 #signUpBtn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 6px 10px;
-  font-size: 12px;
+  position: fixed;
+  left: 50%;
+  top: 65%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  font-size: 14px;
   cursor: pointer;
   background-color: #000000;
   color: white;
@@ -110,22 +111,22 @@ body, input, button, .feedback {
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 #signUpBtn:hover {
-  background-color: #195bc8;
-  transform: translateY(-1px);
+  background-color: #333333;
+  transform: translateX(-50%) translateY(-1px);
 }
 
 #signUpBtn:active {
-  transform: scale(0.97);
+  transform: translateX(-50%) scale(0.97);
 }
 
 #signUpBtn svg {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   fill: #ffffff;
   vertical-align: middle;
 }
