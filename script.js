@@ -52,7 +52,9 @@ function newPuzzle() {
     currentPuzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
     emojiDisplay.textContent = currentPuzzle.emoji;
 
+if (localStorage.getItem("disableTwemoji") !== "true") {
     twemoji.parse(emojiDisplay);
+}
 
     hintDisplay.textContent = currentPuzzle.hint || "";
 
