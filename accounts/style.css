@@ -133,32 +133,34 @@ button:active {
   color: orange;
 }
 
-.requirements {
-  margin-top: 20px;
-  text-align: left;
-  opacity: 0.85;
-  font-size: 14px;
+.announcement {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 13px;
+  color: #000000; 
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  z-index: 999;
+  pointer-events: auto;
+  text-decoration: underline;
 }
 
-.requirements h3 {
-  margin: 10px 0 5px;
-  font-size: 15px;
+.announcement a {
+  color: #000000;
+  text-decoration: none;
+  pointer-events: auto;
 }
 
-.requirements ul {
-  padding-left: 18px;
-  margin: 0 0 10px;
+.announcement a:hover {
+  color: #000000;
 }
 
-.requirements li {
-  color: #aaa;
-  transition: color 0.2s ease;
-}
-
-.requirements li.valid {
-  color: #3bd671;
-}
-
-.requirements li.invalid {
-  color: #ff5f5f;
+.announcement-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
