@@ -4,11 +4,11 @@ button.addEventListener("click", () => {
     if (button.dataset.cooldown) return;
 
     const originalText = button.textContent;
-    button.textContent = "Taking you to GitHub releases...";
+    button.textContent = "Taking you to the Mediafire file...";
     button.dataset.cooldown = "true";
 
     window.open(
-        "https://github.com/pypppe/emojiscrub/releases",
+        "https://www.mediafire.com/file/2ydezwxffbw9yvk/EmojiScrub+Setup+1.0.0.exe/file",
         "_blank"
     );
 
