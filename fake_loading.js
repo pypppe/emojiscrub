@@ -80,7 +80,8 @@
     await step("Checking Accounts...", 600);
     await step("Polishing up...", 600);
     await step("Fixing some stuff..", 600);
-    await step("Loading Unity version...", 200);
+    await step("Loading Electron version...", 200);
+    await step("Loading Announcements", 100);
     await step("Loading Twemoji...", 3000);
 
     subtitle.textContent = "Loaded, enjoy playing.";
