@@ -8,7 +8,7 @@ const puzzles = [
     { emoji: "😤🎮", answer: "steam", hint: "PC gaming platform" },
     { emoji: "👥🚢", answer: "friendship", hint: "A friend.. what?" },
     { emoji: "📽️🍿", answer: "movie", hint: "You watch this in a cinema." },
-    { emoji: "🅶🔎", answer: "google", hint: "Popular search engine." },
+    { emoji: "🇬🔎", answer: "google", hint: "Popular search engine." },
     { emoji: "🪨⭐", answer: "rockstar", hint: "Created Grand Theft Auto." },
     { emoji: "🔑😺", answer: "kitkat", hint: "Chocolate brand. 🔑 means Kit" },
     { emoji: "🍕🎉", answer: "pizza party", hint: "🎉 means party." },
