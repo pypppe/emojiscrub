@@ -36,6 +36,14 @@ const puzzles = [
     { emoji: "🫵🧪", answer: "youtube", hint: "is that YOUr TUBE?" },
     { emoji: "🍫🥛", answer: "chocolate milk", hint: "Usually have this on Winter, to have a nice warm drink." },
     { emoji: "🥖🗼", answer: "france", hint: "This country is in europe, near UK." },
+    { emoji: "🎂🎉", answer: "birthday party", hint: "🎉 means party." },
+    { emoji: "▶️⛽", answer: "playstation", hint: "Xbox or this.." },
+    { emoji: "❎📦", answer: "xbox", hint: "PlayStation or this..." },
+    { emoji: "🍝🟥", answer: "mario", hint: "Characted by Nintendo." },
+    { emoji: "😀🧽", answer: "emojiscrub", hint: "It's the game you're playing." },
+    { emoji: "🗝️🛹", answer: "keyboard", hint: "You use this to type on a computer, or phone." },
+    { emoji: "🎄🎁", answer: "christmas present", hint: "You use this to type on a computer, or phone." },
+    { emoji: "📱🎤", answer: "samsung", hint: "I told Sam not to sing, but SAM SUNG." },
     { emoji: "🌍❌", answer: "brexit", hint: "Britain + Exit = Br..." }
 ];
 
