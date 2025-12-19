@@ -42,7 +42,7 @@ const puzzles = [
     { emoji: "🍝🟥", answer: "mario", hint: "Characted by Nintendo." },
     { emoji: "😀🧽", answer: "emojiscrub", hint: "It's the game you're playing." },
     { emoji: "🗝️🛹", answer: "keyboard", hint: "You use this to type on a computer, or phone." },
-    { emoji: "🎄🎁", answer: "christmas present", hint: "You use this to type on a computer, or phone." },
+    { emoji: "🎄🎁", answer: "christmas present", hint: "Something you get on Christmas." },
     { emoji: "📱🎤", answer: "samsung", hint: "I told Sam not to sing, but SAM SUNG." },
     { emoji: "🌍❌", answer: "brexit", hint: "Britain + Exit = Br..." }
 ];
