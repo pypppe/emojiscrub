@@ -183,3 +183,32 @@ right: 150px;
     cursor: pointer;
     z-index: 1000;
 }
+
+.pc-version-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+
+    background: rgba(144, 238, 144, 0.5);
+    border: 1.5px solid rgba(0, 100, 0, 0.3);
+
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition: transform 0.15s ease, background 0.15s ease;
+    z-index: 1000;
+}
+
+.pc-version-banner:hover {
+    transform: translateY(-2px);
+    background: rgba(144, 238, 144, 0.6);
+}
