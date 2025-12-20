@@ -44,12 +44,6 @@ body, input, button, .feedback {
     align-items: center;
 }
 
-.hint-icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-}
-
 
 .announcement {
   position: absolute;
