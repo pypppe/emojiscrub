@@ -1,4 +1,6 @@
 (() => {
+  if (localStorage.getItem("loadingOverlaySkipped") === "true") return;
+
   const font = document.createElement("link");
   font.rel = "stylesheet";
   font.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap";
@@ -56,6 +58,8 @@
   `;
 
   skipBtn.onclick = () => {
+    localStorage.setItem("loadingOverlaySkipped", "true");
+
     overlay.style.opacity = "0";
     setTimeout(() => overlay.remove(), 600);
   };
