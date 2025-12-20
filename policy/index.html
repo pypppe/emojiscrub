@@ -18,6 +18,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+      min-height: 100vh;
     }
     h1 {
       margin-bottom: 20px;
@@ -38,6 +39,22 @@
       font-style: italic;
       margin: 8px 0;
     }
+
+    .cache-button {
+      margin-top: auto;
+      background: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 0;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .cache-button:hover {
+      opacity: 0.85;
+    }
   </style>
 </head>
 <body>
@@ -52,5 +69,12 @@
     <li>Know your location</li>
     <li>Steal your information</li>
   </ul>
+
+  <a
+    href="https://escrub.astrarune.com/clear_cache"
+    class="cache-button"
+  >
+    Cache Settings
+  </a>
 </body>
 </html>
