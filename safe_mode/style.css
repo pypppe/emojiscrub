@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.emoji {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+#answerInput {
+    padding: 15px;
+    width: 240px;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 0;
+    outline: none;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+body, input, button, .feedback {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.hint {
+    font-size: 18px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.pc-version-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+
+    background: rgba(144, 238, 144, 0.5);
+    border: 1.5px solid rgba(0, 100, 0, 0.3);
+
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition: transform 0.15s ease, background 0.15s ease;
+    z-index: 1000;
+}
+
+.pc-version-banner:hover {
+    transform: translateY(-2px);
+    background: rgba(144, 238, 144, 0.6);
+}
