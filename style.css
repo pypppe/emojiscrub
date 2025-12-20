@@ -40,7 +40,16 @@ body, input, button, .feedback {
     font-size: 18px;
     opacity: 0.5;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
+
+.hint-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
 
 .announcement {
   position: absolute;
