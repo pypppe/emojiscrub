@@ -54,6 +54,12 @@ const answerInput = document.getElementById("answerInput");
 const feedback = document.getElementById("feedback");
 const hintDisplay = document.getElementById("hint");
 
+document.title = [
+  "Emojiscrub | Official Website",
+  "Emojiscrub | The Game",
+  "Emojiscrub | Open-source on GitHub."
+][Math.floor(Math.random() * 3)];
+
 function newPuzzle() {
     currentPuzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
     emojiDisplay.textContent = currentPuzzle.emoji;
