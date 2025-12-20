@@ -184,6 +184,46 @@ right: 150px;
     z-index: 1000;
 }
 
+#codesBtn {
+  position: absolute;
+  top: 20px;
+  left: 190px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#codesBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+#codesBtn:active {
+  transform: scale(0.97);
+}
+
+#codesBtn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#codesBtn .icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+}
+
+
 .pc-version-banner {
     position: fixed;
     bottom: 20px;
