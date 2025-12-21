@@ -61,7 +61,6 @@ panel.innerHTML = `
   </div>
 `;
 
-
 const style = document.createElement("style");
 style.textContent = `
   .setting {
@@ -109,12 +108,11 @@ typingToggle.checked = localStorage.getItem("disableTyping") === "true";
 twemojiToggle.checked = localStorage.getItem("disableTwemoji") === "true";
 bgmToggle.checked = localStorage.getItem("enableBgm") === "true";
 
-// Background Music Setup
 const bgmAudio = new Audio("bgm.mp3");
 bgmAudio.loop = true;
 bgmAudio.volume = 0.5;
+bgmAudio.muted = true; 
 
-// Play or pause the background music based on the setting
 if (bgmToggle.checked) {
   bgmAudio.play();
 }
@@ -155,8 +153,10 @@ panel.querySelector('[data-setting="bgm"]').addEventListener("pointerdown", e =>
 
   if (bgmToggle.checked) {
     bgmAudio.play();
+    bgmAudio.muted = false;
   } else {
     bgmAudio.pause();
+    bgmAudio.muted = true;
   }
 });
 
@@ -169,7 +169,15 @@ panel.querySelector("#resetSettings").addEventListener("pointerdown", e => {
   twemojiToggle.checked = false;
   bgmToggle.checked = false;
   bgmAudio.pause();
+  bgmAudio.muted = true;
   if (window.twemoji) {
     twemoji.parse(emojiDisplay);
   }
 });
+
+window.onload = () => {
+  if (bgmToggle.checked) {
+    bgmAudio.play();
+    bgmAudio.muted = false;
+  }
+};
