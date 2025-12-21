@@ -44,6 +44,11 @@ panel.innerHTML = `
     <input type="checkbox" id="disableTwemoji">
   </div>
 
+  <div class="setting" data-setting="bgm">
+    <span>Enable Background-Music</span>
+    <input type="checkbox" id="enableBgm">
+  </div>
+
   <button id="resetSettings">Reset Settings</button>
 
   <div style="
@@ -98,9 +103,21 @@ document.body.appendChild(overlay);
 
 const typingToggle = panel.querySelector("#disableTyping");
 const twemojiToggle = panel.querySelector("#disableTwemoji");
+const bgmToggle = panel.querySelector("#enableBgm");
 
 typingToggle.checked = localStorage.getItem("disableTyping") === "true";
 twemojiToggle.checked = localStorage.getItem("disableTwemoji") === "true";
+bgmToggle.checked = localStorage.getItem("enableBgm") === "true";
+
+// Background Music Setup
+const bgmAudio = new Audio("bgm.mp3");
+bgmAudio.loop = true;
+bgmAudio.volume = 0.5;
+
+// Play or pause the background music based on the setting
+if (bgmToggle.checked) {
+  bgmAudio.play();
+}
 
 settingsBtn.addEventListener("pointerdown", e => {
   e.stopPropagation();
@@ -131,12 +148,27 @@ panel.querySelector('[data-setting="twemoji"]').addEventListener("pointerdown", 
   }
 });
 
+panel.querySelector('[data-setting="bgm"]').addEventListener("pointerdown", e => {
+  e.stopPropagation();
+  bgmToggle.checked = !bgmToggle.checked;
+  localStorage.setItem("enableBgm", bgmToggle.checked);
+
+  if (bgmToggle.checked) {
+    bgmAudio.play();
+  } else {
+    bgmAudio.pause();
+  }
+});
+
 panel.querySelector("#resetSettings").addEventListener("pointerdown", e => {
   e.stopPropagation();
   localStorage.removeItem("disableTyping");
   localStorage.removeItem("disableTwemoji");
+  localStorage.removeItem("enableBgm");
   typingToggle.checked = false;
   twemojiToggle.checked = false;
+  bgmToggle.checked = false;
+  bgmAudio.pause();
   if (window.twemoji) {
     twemoji.parse(emojiDisplay);
   }
