@@ -1,78 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy</title>
   <link rel="icon" href="policy/favicon.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --text: #000;
+      --muted: rgba(0, 0, 0, 0.5);
+      --divider: rgba(0, 0, 0, 0.08);
+      --bg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 40px;
-      background: #ffffff;
-      color: #000000;
-      text-align: center;
+      background: var(--bg);
+      color: var(--text);
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
     }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 72px 32px 96px;
+    }
+
     h1 {
-      margin-bottom: 20px;
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 8px;
+    }
+
     p {
       font-size: 16px;
-      margin-bottom: 20px;
-    }
-    ul {
-      padding-left: 0;
-      list-style-position: inside;
+      line-height: 1.7;
+      color: var(--muted);
       margin: 0;
-      text-align: center;
-    }
-    li {
-      font-style: italic;
-      margin: 8px 0;
     }
 
-    .cache-button {
+    a {
+      color: var(--text);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--divider);
       margin-top: 24px;
-      background: #000000;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 0;
-      display: inline-block;
+    }
+    
+    .faq {
+      margin-top: 12px;
     }
 
-    .cache-button:hover {
-      opacity: 0.85;
+    details {
+      border-bottom: 1px solid var(--divider);
+      padding: 16px 0;
+      transition: background 0.2s ease;
+    }
+
+    summary {
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      padding-right: 24px;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      font-size: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      margin-top: 12px;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    .back {
+      margin-top: 72px;
+      font-size: 16px;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
+  <div class="container">
 
-  <p>While you play <strong>Emojiscrub</strong>, we promise you that we do not do the following:</p>
+    <h1>Privacy Policy</h1>
 
-  <ul>
-    <li>Track your data</li>
-    <li>See what you do on the game</li>
-    <li>What you type</li>
-    <li>Know your location</li>
-    <li>Steal your information</li>
-  </ul>
+    <h2>How we use your data.</h2>
+    <p>
+      We do not collect your data, cookies, etc..., we don't know what you do on
+      the site, what words you guess, or anything. Your data is private and isn't
+      used to improve performance, improve easier or harder words based on guesses etc...
+    </p>
 
-  <a
-    href="https://escrub.astrarune.com/clear_cache"
-    class="cache-button"
-  >
-    Cache Settings
-  </a>
+    <div class="divider"></div>
+
+    <h2>Cache</h2>
+    <p>
+      When you press Skip on the load menu, create an account, or even change
+      settings, that is saved via Localstorage to remember, if you wish to clear
+      all cache please
+      <a href="https://escrub.astrarune.com/clear_cache">click here</a>.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>Ads &amp; Promotions</h2>
+    <p>
+      There are no ads or promotions in Emojiscrub, we believe ADS &amp; promotions
+      ruin the fun/experience for anyone. We don't make any money from this site,
+      and you shouldn't be forced to watch ADS for a game where you guess words,
+      this game is created for anyone to enjoy.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I clear specific cache?</summary>
+        <p>
+          You sort of can, if you wish to log out you have to press Log Out on the
+          account page, you cannot remove the cache for loading screen unless you
+          clear all cache, and you can reset your Settings by pressing Reset Settings.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this game open-source?</summary>
+        <p>
+          Yes, this game is fully open-source and the Electron version provides the
+          code with no modifications such as obsfucation, to view the GitHub page,
+          <a href="https://github.com/pypppe/emojiscrub">click here</a>.
+        </p>
+      </details>
+    </div>
+
+    <div class="back">
+      <a href="https://escrub.astrarune.com">Go back to game</a>
+    </div>
+
+  </div>
 </body>
 </html>
