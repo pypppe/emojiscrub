@@ -4,12 +4,14 @@ const overlay = document.createElement("div");
 overlay.style.cssText = `
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, .55);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 999999;
   touch-action: manipulation;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 `;
 
 const panel = document.createElement("div");
@@ -19,8 +21,11 @@ panel.style.cssText = `
   width: 300px;
   padding: 18px;
   font-family: Poppins, sans-serif;
-  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
   user-select: none;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 `;
 
 panel.innerHTML = `
@@ -73,7 +78,7 @@ style.textContent = `
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
     font-size: 14px;
     cursor: pointer;
     touch-action: manipulation;
@@ -99,7 +104,7 @@ style.textContent = `
   #resetSettings:hover {
     background: #232329;
   }
-  
+
   /* Dark Mode Styles */
   body.dark-mode {
     background-color: #181818;
@@ -180,7 +185,6 @@ twemojiToggle.checked = localStorage.getItem("disableTwemoji") === "true";
 bgmToggle.checked = localStorage.getItem("enableBgm") === "true";
 darkModeToggle.checked = localStorage.getItem("darkMode") === "true";
 
-// Dark Mode Initialization
 if (darkModeToggle.checked) {
   document.body.classList.add('dark-mode');
 }
@@ -188,7 +192,7 @@ if (darkModeToggle.checked) {
 const bgmAudio = new Audio("bgm.mp3");
 bgmAudio.loop = true;
 bgmAudio.volume = 0.5;
-bgmAudio.muted = true; 
+bgmAudio.muted = true;
 
 if (bgmToggle.checked) {
   bgmAudio.play();
@@ -197,15 +201,32 @@ if (bgmToggle.checked) {
 settingsBtn.addEventListener("pointerdown", e => {
   e.stopPropagation();
   overlay.style.display = "flex";
+  setTimeout(() => {
+    overlay.style.opacity = 1;
+    panel.style.opacity = 1;
+    panel.style.transform = "scale(1)";
+  }, 10);
 });
 
 panel.querySelector("#closeSettings").addEventListener("pointerdown", e => {
   e.stopPropagation();
-  overlay.style.display = "none";
+  overlay.style.opacity = 0;
+  panel.style.opacity = 0;
+  panel.style.transform = "scale(0.9)";
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 300);
 });
 
 overlay.addEventListener("pointerdown", e => {
-  if (e.target === overlay) overlay.style.display = "none";
+  if (e.target === overlay) {
+    overlay.style.opacity = 0;
+    panel.style.opacity = 0;
+    panel.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 300);
+  }
 });
 
 panel.querySelector('[data-setting="typing"]').addEventListener("pointerdown", e => {
