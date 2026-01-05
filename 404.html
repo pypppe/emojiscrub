@@ -43,19 +43,11 @@
             opacity: 0.5;
         }
 
-        button {
+        .countdown {
             margin-top: 24px;
-            background: #000000;
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            font-size: 14px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.85;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
         }
     </style>
 </head>
@@ -64,10 +56,26 @@
         <div class="content">
             <h1>404</h1>
             <p>This page doesn't exist.</p>
-            <button onclick="window.location.href='https://escrub.astrarune.com'">
-                Go back
-            </button>
+            <p class="countdown" id="countdown">2</p>
         </div>
     </div>
+
+    <script>
+        let countdownElement = document.getElementById("countdown");
+        let countdownValue = 2;
+
+        let countdownInterval = setInterval(function() {
+            countdownValue--;
+            if (countdownValue > 0) {
+                countdownElement.textContent = countdownValue;
+            } else {
+                countdownElement.textContent = "1";
+                clearInterval(countdownInterval);
+                setTimeout(function() {
+                    window.location.href = "https://escrub.astrarune.com";
+                }, 500);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
