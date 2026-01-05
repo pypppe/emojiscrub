@@ -40,7 +40,7 @@ panel.innerHTML = `
   </div>
 
   <div class="setting" data-setting="twemoji">
-    <span>Disable Twemoji</span>
+    <span>Disable Custom Emojis/Twemoji</span>
     <input type="checkbox" id="disableTwemoji">
   </div>
 
