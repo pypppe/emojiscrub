@@ -49,6 +49,11 @@ panel.innerHTML = `
     <input type="checkbox" id="enableBgm">
   </div>
 
+  <div class="setting" data-setting="darkMode">
+    <span>Enable Dark Mode</span>
+    <input type="checkbox" id="enableDarkMode">
+  </div>
+
   <button id="resetSettings">Reset Settings</button>
 
   <div style="
@@ -94,7 +99,72 @@ style.textContent = `
   #resetSettings:hover {
     background: #232329;
   }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+  }
+
+  body.dark-mode .setting {
+    color: #f5f5f5;
+    background-color: #333;
+  }
+
+  body.dark-mode .setting input {
+    background-color: #444;
+  }
+
+  body.dark-mode #resetSettings {
+    background: #222;
+  }
+
+  body.dark-mode #resetSettings:hover {
+    background: #2a2a2a;
+  }
+
+  body.dark-mode #panel {
+    background: #222;
+  }
+
+  /* General text styling for Dark Mode */
+  body.dark-mode p, 
+  body.dark-mode span, 
+  body.dark-mode a, 
+  body.dark-mode li, 
+  body.dark-mode div, 
+  body.dark-mode label {
+    color: #fff !important;
+  }
+
+  /* Dark mode for links */
+  body.dark-mode a {
+    color: #a3c0ff; /* Light blue for links */
+  }
+
+  /* Light grey background for text boxes */
+  body.dark-mode input[type="text"], 
+  body.dark-mode input[type="checkbox"],
+  body.dark-mode input[type="password"], 
+  body.dark-mode textarea {
+    background-color: #555;
+    color: #fff;
+  }
+
+  /* Announcement section text color */
+  body.dark-mode .announcement {
+    color: #fff !important;
+  }
+
+  body.dark-mode .announcement a {
+    color: #a3c0ff; /* Light blue for links in announcement */
+  }
+
+  body.dark-mode .announcement svg {
+    fill: #fff;
+  }
 `;
+
 document.head.appendChild(style);
 
 overlay.appendChild(panel);
@@ -103,10 +173,17 @@ document.body.appendChild(overlay);
 const typingToggle = panel.querySelector("#disableTyping");
 const twemojiToggle = panel.querySelector("#disableTwemoji");
 const bgmToggle = panel.querySelector("#enableBgm");
+const darkModeToggle = panel.querySelector("#enableDarkMode");
 
 typingToggle.checked = localStorage.getItem("disableTyping") === "true";
 twemojiToggle.checked = localStorage.getItem("disableTwemoji") === "true";
 bgmToggle.checked = localStorage.getItem("enableBgm") === "true";
+darkModeToggle.checked = localStorage.getItem("darkMode") === "true";
+
+// Dark Mode Initialization
+if (darkModeToggle.checked) {
+  document.body.classList.add('dark-mode');
+}
 
 const bgmAudio = new Audio("bgm.mp3");
 bgmAudio.loop = true;
@@ -160,19 +237,34 @@ panel.querySelector('[data-setting="bgm"]').addEventListener("pointerdown", e =>
   }
 });
 
+panel.querySelector('[data-setting="darkMode"]').addEventListener("pointerdown", e => {
+  e.stopPropagation();
+  darkModeToggle.checked = !darkModeToggle.checked;
+  localStorage.setItem("darkMode", darkModeToggle.checked);
+  
+  if (darkModeToggle.checked) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+});
+
 panel.querySelector("#resetSettings").addEventListener("pointerdown", e => {
   e.stopPropagation();
   localStorage.removeItem("disableTyping");
   localStorage.removeItem("disableTwemoji");
   localStorage.removeItem("enableBgm");
+  localStorage.removeItem("darkMode");
   typingToggle.checked = false;
   twemojiToggle.checked = false;
   bgmToggle.checked = false;
+  darkModeToggle.checked = false;
   bgmAudio.pause();
   bgmAudio.muted = true;
   if (window.twemoji) {
     twemoji.parse(emojiDisplay);
   }
+  document.body.classList.remove('dark-mode');
 });
 
 window.onload = () => {
