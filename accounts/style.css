@@ -40,6 +40,7 @@ h1 {
 .input-section {
   margin-bottom: 20px;
   text-align: left;
+    border-radius: 6px;
 }
 
 .input-label {
