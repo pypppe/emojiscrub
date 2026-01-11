@@ -103,11 +103,20 @@ document.getElementById("answerInput").addEventListener("input", function () {
 
     value = value.replace(/[^a-zA-Z ]/g, "");
 
-    const parts = value.split(" ");
+    let parts = value.split(" ");
+    
+    parts = parts.map(word => {
+        if (word.length > 0) {
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        }
+        return word;
+    });
+
     if (parts.length > 2) {
-        value = parts.slice(0, 2).join(" ");
+        parts = parts.slice(0, 2);
     }
 
+    value = parts.join(" ");
     value = value.slice(0, 17);
 
     this.value = value;
