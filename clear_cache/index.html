@@ -84,16 +84,29 @@
 
 <script>
     function clearCache() {
-        const keys = [
-            "loadingOverlaySkipped",
-            "disableTwemoji",
-            "disableTyping",
-            "betaAccepted"
-        ];
+        const status = document.getElementById("status");
+        const button = document.querySelector("button");
 
-        keys.forEach(key => localStorage.removeItem(key));
+        status.textContent = "Clearing cache...";
+        button.disabled = true;
+        button.style.opacity = "0.6";
+        button.style.cursor = "not-allowed";
 
-        document.getElementById("status").textContent = "Cache cleared successfully.";
+        setTimeout(() => {
+            const keys = [
+                "loadingOverlaySkipped",
+                "disableTwemoji",
+                "disableTyping",
+                "betaAccepted"
+            ];
+
+            keys.forEach(key => localStorage.removeItem(key));
+
+            status.textContent = "Cache cleared successfully.";
+            button.disabled = false;
+            button.style.opacity = "1";
+            button.style.cursor = "pointer";
+        }, 1000);
     }
 </script>
 
