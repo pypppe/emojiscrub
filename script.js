@@ -57,6 +57,8 @@ const hintDisplay = document.getElementById("hint");
 document.title = [
   "Emojiscrub | Official Website",
   "Emojiscrub | The Game",
+  "Emojiscrub | Webgame",
+  "Emojiscrub | By Astrarune",
   "Emojiscrub | Open-source on GitHub."
 ][Math.floor(Math.random() * 3)];
 
