@@ -92,6 +92,9 @@
     await step("Loading Setup Data...", 10);
     await step("Polishing Up...", 52);
     await step("Communicating to Verification", 2);
+    await step("Loading GitHub", 2);
+    await step("Communicating to Cloudflare...", 12);
+    await step("Checking Javascript...", 3);
 
     subtitle.textContent = "Loaded, enjoy playing.";
 
