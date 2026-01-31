@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emojiscrub Setup</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; margin:0; padding:0; font-family:'Poppins', sans-serif; }
+    body {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background-color:white;
+        overflow:hidden;
+    }
+    .screen {
+        position:absolute;
+        width:100%;
+        max-width:400px;
+        text-align:center;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+    .hidden { opacity:0; pointer-events:none; }
+    button {
+        padding:12px 30px;
+        font-size:16px;
+        font-weight:600;
+        color:white;
+        background-color:#007BFF;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        transition: all 0.2s ease;
+    }
+    button:hover { background-color:#0056b3; }
+    h1 { margin-bottom:20px; font-size:2rem; }
+    select, input[type="text"] {
+        padding:12px 18px;
+        border:2px solid #ccc;
+        border-radius:10px;
+        font-size:16px;
+        font-weight:500;
+        margin-top:15px;
+        width:80%;
+    }
+    select:hover, input[type="text"]:hover { border-color:#007BFF; }
+    select:focus, input[type="text"]:focus { outline:none; border-color:#007BFF; box-shadow:0 0 5px rgba(0,123,255,0.5);}
+    .dob-container, .gender-options { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:20px; }
+    .gender-option {
+        padding:10px 15px;
+        border:2px solid #ccc;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:500;
+        transition: all 0.2s ease;
+    }
+    .gender-option:hover, .gender-option.selected { border-color:#007BFF; background-color:#f0f8ff; }
+</style>
+</head>
+<body>
+
+<div class="screen" id="welcomeScreen">
+    <h1>Welcome to Emojiscrub, let's get some stuff clear.</h1>
+    <button id="okayBtn" class="hidden">Okay!</button>
+</div>
+
+<div class="screen hidden" id="dobScreen">
+    <h1>Date of Birth</h1>
+    <div class="dob-container">
+        <select id="month">
+            <option value="">Month</option>
+            <option value="1">January</option><option value="2">February</option><option value="3">March</option>
+            <option value="4">April</option><option value="5">May</option><option value="6">June</option>
+            <option value="7">July</option><option value="8">August</option><option value="9">September</option>
+            <option value="10">October</option><option value="11">November</option><option value="12">December</option>
+        </select>
+        <select id="day"><option value="">Day</option></select>
+        <select id="year"><option value="">Year</option></select>
+    </div>
+    <button id="dobContinue">Continue</button>
+</div>
+
+<div class="screen hidden" id="nameScreen">
+    <h1>What is your name?</h1>
+    <input type="text" id="nameInput" placeholder="Enter name (min 2 chars)" maxlength="50">
+    <button id="nameContinue">Continue</button>
+</div>
+
+<div class="screen hidden" id="genderScreen">
+    <h1>What is your gender identity?</h1>
+    <div class="gender-options">
+        <div class="gender-option">Male</div>
+        <div class="gender-option">Female</div>
+        <div class="gender-option" id="transOption">Transgender</div>
+        <div class="gender-option">Intersex</div>
+        <div class="gender-option">Other</div>
+    </div>
+    <select id="transSelect" class="hidden">
+        <option value="">Select...</option>
+        <option value="Transgender Girl">Transgender Girl</option>
+        <option value="Transgender Boy">Transgender Boy</option>
+    </select>
+    <button id="genderContinue">Continue</button>
+</div>
+
+<div class="screen hidden" id="trackingScreen">
+    <h1>Allow Emojiscrub to track your data?</h1>
+    <div>❌</div>
+    <button id="trackingContinue">Continue</button>
+</div>
+
+<div class="screen hidden" id="finishScreen">
+    <h1>You're all set.</h1>
+</div>
+
+<script>
+const daySelect = document.getElementById('day');
+for(let i=1;i<=31;i++){ const opt=document.createElement('option'); opt.value=i; opt.text=i; daySelect.appendChild(opt);}
+const yearSelect=document.getElementById('year'); for(let y=2000;y<=2026;y++){ const opt=document.createElement('option'); opt.value=y; opt.text=y; yearSelect.appendChild(opt);}
+
+function showScreen(current, next){
+    current.style.transform='translateX(-100%)';
+    current.style.opacity='0';
+    setTimeout(()=>{
+        current.classList.add('hidden');
+        current.style.transform='';
+        next.classList.remove('hidden');
+        next.style.transform='translateX(100%)';
+        next.style.opacity='0';
+        setTimeout(()=>{
+            next.style.transform='translateX(0)';
+            next.style.opacity='1';
+        },10);
+    },600);
+}
+
+const welcomeScreen=document.getElementById('welcomeScreen');
+const okayBtn=document.getElementById('okayBtn');
+setTimeout(()=>okayBtn.classList.remove('hidden'),1200);
+okayBtn.addEventListener('click',()=>showScreen(welcomeScreen,document.getElementById('dobScreen')));
+
+const dobContinue=document.getElementById('dobContinue');
+dobContinue.addEventListener('click',()=>{
+    const month=document.getElementById('month').value;
+    const day=document.getElementById('day').value;
+    const year=document.getElementById('year').value;
+    if(month && day && year) showScreen(document.getElementById('dobScreen'),document.getElementById('nameScreen'));
+});
+
+const nameContinue=document.getElementById('nameContinue');
+nameContinue.addEventListener('click',()=>{
+    const name=document.getElementById('nameInput').value.trim();
+    if(name.length>=2) showScreen(document.getElementById('nameScreen'),document.getElementById('genderScreen'));
+});
+
+const genderOptions=document.querySelectorAll('.gender-option');
+const transSelect=document.getElementById('transSelect');
+let selectedGender='';
+genderOptions.forEach(option=>{
+    option.addEventListener('click',()=>{
+        genderOptions.forEach(o=>o.classList.remove('selected'));
+        option.classList.add('selected');
+        selectedGender=option.textContent;
+        if(selectedGender==='Transgender') transSelect.classList.remove('hidden');
+        else transSelect.classList.add('hidden');
+    });
+});
+const genderContinue=document.getElementById('genderContinue');
+genderContinue.addEventListener('click',()=>{
+    if(selectedGender==='Transgender'){
+        if(transSelect.value) showScreen(document.getElementById('genderScreen'),document.getElementById('trackingScreen'));
+    } else if(selectedGender!=='') showScreen(document.getElementById('genderScreen'),document.getElementById('trackingScreen'));
+});
+
+document.getElementById('trackingContinue').addEventListener('click',()=>{
+    showScreen(document.getElementById('trackingScreen'),document.getElementById('finishScreen'));
+});
+</script>
+
+</body>
+</html>
