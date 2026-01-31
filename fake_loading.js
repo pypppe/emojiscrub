@@ -86,7 +86,12 @@
     await step("Fixing some stuff..", 600);
     await step("Loading Electron version...", 200);
     await step("Loading Announcements", 100);
-    await step("Loading Twemoji...", 3000);
+    await step("Loading Twemoji...", 1000);
+    await step("Loading Setup...", 350);
+    await step("Loading Data...", 150);
+    await step("Loading Setup Data...", 10);
+    await step("Polishing Up...", 1200);
+    await step("Communicating to Verification", 2);
 
     subtitle.textContent = "Loaded, enjoy playing.";
 
