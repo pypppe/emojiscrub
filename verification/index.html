@@ -7,7 +7,7 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: 700; /* make everything bold */
     background: white;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
   }
   input {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 700; /* bold input text */
     padding: 8px;
     margin-bottom: 20px;
     width: 300px;
@@ -52,7 +52,7 @@
     justify-content: center;
     font-size: 1rem;
     margin-top: 10px;
-    font-weight: 700;
+    font-weight: 700; /* bold message text */
   }
   .message svg {
     width: 24px;
@@ -70,36 +70,11 @@
 
 <script>
 const sentences = [
-const sentences = [
-  "AKYOXPD",
-  "JQZRMLT",
-  "PXWKVJN",
-  "BDFGHRT",
-  "LMNQZAC",
-  "TYXWRQP",
-  "VJDKLMB",
-  "SZPNQXH",
-  "CFVBRKT",
-  "QWERTYU",
-  "ZXCVBNM",
-  "PLKJHGF",
-  "MNBVCXZ",
-  "QAZWSXE",
-  "EDCRFVT",
-  "GBYHNUJ",
-  "IKOLPMN",
-  "UJMIKOL",
-  "POIUYTRE",
-  "LKJHGFDS",
-  "QWAZSXED",
-  "RFVTGBYH",
-  "NHUJMIKO",
-  "PLMOKNIJ",
-  "XSWDCFV",
-  "VGBHNJMK",
-  "QAZXSWED",
-  "EDCFTGBV",
-  "YHNJMKLO"
+  "The dog is cool",
+  "Hello World",
+  "Emojiscrub",
+  "Quick brown fox",
+  "JavaScript is fun"
 ];
 
 const challengeText = document.getElementById('challenge-text');
@@ -115,9 +90,9 @@ if(localStorage.getItem('humanproven_escrub')) {
 
 let typingTimer;
 input.addEventListener('input', () => {
-  feedback.innerHTML = '';
+  feedback.innerHTML = ''; // clear feedback
   clearTimeout(typingTimer);
-  typingTimer = setTimeout(checkInput, 2000);
+  typingTimer = setTimeout(checkInput, 2000); // 2 sec after last key
 });
 
 function checkInput() {
@@ -158,7 +133,7 @@ function checkInput() {
       </div>
       `;
     }
-  }, 500);
+  }, 500); // spinner delay
 }
 </script>
 </body>
