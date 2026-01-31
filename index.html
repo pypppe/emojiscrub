@@ -146,6 +146,28 @@ document.getElementById("answerInput").addEventListener("input", function () {
 
     this.value = value;
 });
+
+const welcomeEl = document.getElementById('welcomeMessage');
+
+let storedName = null;
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith("EMOJISCRUB_NAME_")) {
+        storedName = key.split("EMOJISCRUB_NAME_")[1];
+        break;
+    }
+}
+
+if (storedName) {
+    welcomeEl.textContent = `Welcome, ${storedName.charAt(0).toUpperCase() + storedName.slice(1)}!`;
+} else {
+    welcomeEl.textContent = "Welcome!";
+}
+
+setTimeout(() => {
+    welcomeEl.style.opacity = '0';
+}, 2000);
+
 </script>
 
 
