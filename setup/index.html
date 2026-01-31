@@ -117,6 +117,14 @@
 </div>
 
 <script>
+
+if (localStorage.getItem('FINISHSCREEN_COMPLETED_ESCRUB')) {
+    window.location.href = 'https://escrub.astrarune.com';
+}
+
+const daySelect = document.getElementById('day');
+for(let i=1;i<=31;i++){ const opt=document.createElement('option'); opt.value=i; opt.text=i; daySelect.appendChild(opt);}
+const yearSelect=document.getElementById('year'); for(let y=2000;y<=2026;y++){ const opt=document.createElement('option'); opt.value=y; opt.text=y; yearSelect.appendChild(opt);}
 const daySelect = document.getElementById('day');
 for(let i=1;i<=31;i++){ const opt=document.createElement('option'); opt.value=i; opt.text=i; daySelect.appendChild(opt);}
 const yearSelect=document.getElementById('year'); for(let y=2000;y<=2026;y++){ const opt=document.createElement('option'); opt.value=y; opt.text=y; yearSelect.appendChild(opt);}
