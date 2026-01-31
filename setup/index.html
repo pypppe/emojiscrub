@@ -7,15 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
     * { box-sizing: border-box; margin:0; padding:0; font-family:'Poppins', sans-serif; }
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    background-color: white;
-    overflow: hidden;
-    padding-top: 40px;
+    body {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background-color:white;
+        overflow:hidden;
+    }
     .screen {
         position:absolute;
         width:100%;
@@ -59,17 +58,9 @@ body {
         transition: all 0.2s ease;
     }
     .gender-option:hover, .gender-option.selected { border-color:#007BFF; background-color:#f0f8ff; }
-
-.logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 30px;
-}
-
 </style>
 </head>
 <body>
-     <img src="https://escrub.astrarune.com/setup/emojiscrub.png" alt="Emojiscrub Logo" class="logo">
 
 <div class="screen" id="welcomeScreen">
     <h1>Welcome to Emojiscrub, let's get some stuff clear.</h1>
