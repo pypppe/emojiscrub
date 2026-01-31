@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prove you're human.</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  .small-text {
+    opacity: 0.5;
+    font-size: 0.8rem;
+  }
+  .big-text {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  input {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  .svg-container {
+    margin-top: 10px;
+  }
+  .spinner {
+    animation: spin 2s linear infinite;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  @keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+  .message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 700;
+  }
+  .message svg {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+</head>
+<body>
+
+<div class="small-text">Spell...</div>
+<div class="big-text" id="challenge-text"></div>
+<input type="text" id="user-input" autocomplete="off" />
+
+<div class="svg-container" id="feedback"></div>
+
+<script>
+const sentences = [
+  "The dog is cool",
+  "Hello World",
+  "Emojiscrub",
+  "Quick brown fox",
+  "JavaScript is fun"
+];
+
+const challengeText = document.getElementById('challenge-text');
+const input = document.getElementById('user-input');
+const feedback = document.getElementById('feedback');
+
+const sentence = sentences[Math.floor(Math.random() * sentences.length)];
+challengeText.textContent = sentence;
+
+if(localStorage.getItem('humanproven_escrub')) {
+  window.location.href = "https://escrub.astrarune.com";
+}
+
+let typingTimer;
+input.addEventListener('input', () => {
+  feedback.innerHTML = '';
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(checkInput, 2000);
+});
+
+function checkInput() {
+  feedback.innerHTML = `
+  <svg class="spinner" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#000000">
+    <g>
+      <rect x="233.929" width="44.143" height="124.116"/>
+      <rect x="233.929" y="387.884" width="44.143" height="124.116"/>
+      <polygon points="59.376,90.589 147.143,178.349 178.357,147.152 90.59,59.384"/>
+      <polygon points="333.662,364.858 421.411,452.625 452.626,421.411 364.858,333.652"/>
+      <rect y="233.937" width="124.126" height="44.126"/>
+      <rect x="387.875" y="233.937" width="124.125" height="44.134"/>
+      <rect x="96.816" y="331.082" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -75.0574 755.1976)" width="44.118" height="124.122"/>
+      <polygon points="452.626,90.598 421.429,59.384 333.662,147.152 364.875,178.357"/>
+    </g>
+  </svg>
+  `;
+
+  setTimeout(() => {
+    if(input.value.trim() === sentence) {
+      localStorage.setItem('humanproven_escrub', 'true');
+      feedback.innerHTML = `
+      <div class="message">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+        <polygon points="18,33.172 6,21.172 3.171,24 18,38.828 44.829,12 42,9.172"/>
+      </svg>
+      <span>You may enter.</span>
+      </div>
+      `;
+      setTimeout(() => window.location.href = "https://escrub.astrarune.com", 1000);
+    } else {
+      feedback.innerHTML = `
+      <div class="message">
+      <svg fill="#000000" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"/>
+      </svg>
+      <span>Incorrect spelling. Please check again.</span>
+      </div>
+      `;
+    }
+  }, 500);
+}
+</script>
+</body>
+</html>
