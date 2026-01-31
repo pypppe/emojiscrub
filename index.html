@@ -83,6 +83,11 @@
     <script src="settings.js"></script>
     <script src="fake_loading.js"></script>
 <script>
+
+  if (!localStorage.getItem('humanproven_escrub')) {
+      window.location.href = "https://escrub.astrarune.com/verification";
+  }
+    
 let userCountry = null;
 
 fetch("https://ipapi.co/json/")
