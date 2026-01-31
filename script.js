@@ -42,7 +42,10 @@ const puzzles = [
     { emoji: "🗝️🛹", answer: "keyboard", hint: "You use this to type on a computer, or phone." },
     { emoji: "🎄🎁", answer: "christmas present", hint: "Something you get on Christmas." },
     { emoji: "📱🎤", answer: "samsung", hint: "Phone brand based off Android." },
-    { emoji: "ℹ️🗒️", answer: "ipad", hint: "Apple's tablets." }
+    { emoji: "🧑‍🚀🚀", answer: "astronaut", hint: "People like these have visited the Moon." },
+    { emoji: "🏳️🔴", answer: "japan", hint: "Country in Asia." },
+    { emoji: "🔵🔴🏳️", answer: "south korea", hint: "Country in Asia." },
+    { emoji: "🇮🇹😋", answer: "pizza", hint: "This food usually has pepperoni on it." }
 ];
 
 
