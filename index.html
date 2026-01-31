@@ -83,6 +83,16 @@
     <script src="settings.js"></script>
     <script src="fake_loading.js"></script>
 <script>
+let userCountry = null;
+
+fetch("https://ipapi.co/json/")
+  .then(response => response.json())
+  .then(data => {
+    userCountry = data.country_name;
+    console.log("User country:", userCountry);
+  })
+  .catch(err => console.error("Country fetch error:", err));
+
 document.getElementById("answerInput").addEventListener("input", function () {
     let value = this.value;
 
@@ -107,6 +117,7 @@ document.getElementById("answerInput").addEventListener("input", function () {
     this.value = value;
 });
 </script>
+
 
 </body>
 </html>
