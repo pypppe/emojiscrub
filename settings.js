@@ -152,7 +152,7 @@ style.textContent = `
   body.dark-mode input[type="checkbox"],
   body.dark-mode input[type="password"], 
   body.dark-mode textarea {
-    background-color: #555;
+    background-color: #181818;
     color: #fff;
   }
 
