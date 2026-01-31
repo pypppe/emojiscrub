@@ -19,6 +19,7 @@ We believe ads ruin the fun.
 **Emojiscrub** is a **completely free** web game — made **for students and anyone**, not for profit.
 
 This project exists purely **for fun and creativity**, not commercialization. ✨
+Unfortunately, we cannot remove the ADs on the Mobile version of Emojiscrub.
 
 ---
 
