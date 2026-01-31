@@ -89,9 +89,22 @@
 
 <div class="challenge-container">
   <div class="small-text">Spell...</div>
-  <div class="big-text" id="challenge-text">Hello World</div>
+  <div class="big-text" id="challenge-text-wrapper" style="position: relative;">
+    <span id="challenge-text">Hello World</span>
+    <span style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 10;
+      user-select: none;
+    "></span>
+  </div>
   <input type="text" id="user-input" autocomplete="off" />
 </div>
+
 
 <div class="svg-container" id="feedback"></div>
 
