@@ -117,74 +117,82 @@
 </div>
 
 <script>
-
 if (localStorage.getItem('FINISHSCREEN_COMPLETED_ESCRUB')) {
     window.location.href = 'https://escrub.astrarune.com';
 }
 
 const daySelect = document.getElementById('day');
-for(let i=1;i<=31;i++){ const opt=document.createElement('option'); opt.value=i; opt.text=i; daySelect.appendChild(opt);}
-const yearSelect=document.getElementById('year'); for(let y=2000;y<=2026;y++){ const opt=document.createElement('option'); opt.value=y; opt.text=y; yearSelect.appendChild(opt);}
-const daySelect = document.getElementById('day');
-for(let i=1;i<=31;i++){ const opt=document.createElement('option'); opt.value=i; opt.text=i; daySelect.appendChild(opt);}
-const yearSelect=document.getElementById('year'); for(let y=2000;y<=2026;y++){ const opt=document.createElement('option'); opt.value=y; opt.text=y; yearSelect.appendChild(opt);}
+for(let i=1; i<=31; i++){ 
+    const opt = document.createElement('option'); 
+    opt.value = i; 
+    opt.text = i; 
+    daySelect.appendChild(opt);
+}
+const yearSelect = document.getElementById('year'); 
+for(let y=2000; y<=2026; y++){ 
+    const opt = document.createElement('option'); 
+    opt.value = y; 
+    opt.text = y; 
+    yearSelect.appendChild(opt);
+}
 
 function showScreen(current, next){
-    current.style.transform='translateX(-100%)';
-    current.style.opacity='0';
+    current.style.transform = 'translateX(-100%)';
+    current.style.opacity = '0';
     setTimeout(()=>{
         current.classList.add('hidden');
-        current.style.transform='';
+        current.style.transform = '';
         next.classList.remove('hidden');
-        next.style.transform='translateX(100%)';
-        next.style.opacity='0';
+        next.style.transform = 'translateX(100%)';
+        next.style.opacity = '0';
         setTimeout(()=>{
-            next.style.transform='translateX(0)';
-            next.style.opacity='1';
+            next.style.transform = 'translateX(0)';
+            next.style.opacity = '1';
         },10);
     },600);
 }
 
-const welcomeScreen=document.getElementById('welcomeScreen');
-const okayBtn=document.getElementById('okayBtn');
+const welcomeScreen = document.getElementById('welcomeScreen');
+const okayBtn = document.getElementById('okayBtn');
 setTimeout(()=>okayBtn.classList.remove('hidden'),1200);
-okayBtn.addEventListener('click',()=>showScreen(welcomeScreen,document.getElementById('dobScreen')));
+okayBtn.addEventListener('click', ()=>showScreen(welcomeScreen, document.getElementById('dobScreen')));
 
-const dobContinue=document.getElementById('dobContinue');
-dobContinue.addEventListener('click',()=>{
-    const month=document.getElementById('month').value;
-    const day=document.getElementById('day').value;
-    const year=document.getElementById('year').value;
-    if(month && day && year) showScreen(document.getElementById('dobScreen'),document.getElementById('nameScreen'));
+const dobContinue = document.getElementById('dobContinue');
+dobContinue.addEventListener('click', ()=>{
+    const month = document.getElementById('month').value;
+    const day = document.getElementById('day').value;
+    const year = document.getElementById('year').value;
+    if(month && day && year) showScreen(document.getElementById('dobScreen'), document.getElementById('nameScreen'));
 });
 
-const nameContinue=document.getElementById('nameContinue');
-nameContinue.addEventListener('click',()=>{
-    const name=document.getElementById('nameInput').value.trim();
-    if(name.length>=2) showScreen(document.getElementById('nameScreen'),document.getElementById('genderScreen'));
+const nameContinue = document.getElementById('nameContinue');
+nameContinue.addEventListener('click', ()=>{
+    const name = document.getElementById('nameInput').value.trim();
+    if(name.length >= 2) showScreen(document.getElementById('nameScreen'), document.getElementById('genderScreen'));
 });
 
-const genderOptions=document.querySelectorAll('.gender-option');
-const transSelect=document.getElementById('transSelect');
-let selectedGender='';
+const genderOptions = document.querySelectorAll('.gender-option');
+const transSelect = document.getElementById('transSelect');
+let selectedGender = '';
 genderOptions.forEach(option=>{
-    option.addEventListener('click',()=>{
-        genderOptions.forEach(o=>o.classList.remove('selected'));
+    option.addEventListener('click', ()=>{
+        genderOptions.forEach(o => o.classList.remove('selected'));
         option.classList.add('selected');
-        selectedGender=option.textContent;
-        if(selectedGender==='Transgender') transSelect.classList.remove('hidden');
+        selectedGender = option.textContent;
+        if(selectedGender === 'Transgender') transSelect.classList.remove('hidden');
         else transSelect.classList.add('hidden');
     });
 });
-const genderContinue=document.getElementById('genderContinue');
-genderContinue.addEventListener('click',()=>{
-    if(selectedGender==='Transgender'){
-        if(transSelect.value) showScreen(document.getElementById('genderScreen'),document.getElementById('trackingScreen'));
-    } else if(selectedGender!=='') showScreen(document.getElementById('genderScreen'),document.getElementById('trackingScreen'));
+
+const genderContinue = document.getElementById('genderContinue');
+genderContinue.addEventListener('click', ()=>{
+    if(selectedGender === 'Transgender'){
+        if(transSelect.value) showScreen(document.getElementById('genderScreen'), document.getElementById('trackingScreen'));
+    } else if(selectedGender !== '') showScreen(document.getElementById('genderScreen'), document.getElementById('trackingScreen'));
 });
 
-document.getElementById('trackingContinue').addEventListener('click',()=>{
-    showScreen(document.getElementById('trackingScreen'),document.getElementById('finishScreen'));
+document.getElementById('trackingContinue').addEventListener('click', ()=>{
+    showScreen(document.getElementById('trackingScreen'), document.getElementById('finishScreen'));
 });
 
 const finishScreen = document.getElementById('finishScreen');
@@ -192,6 +200,7 @@ finishScreen.addEventListener('transitionend', () => {
     localStorage.setItem('FINISHSCREEN_COMPLETED_ESCRUB', 'true');
 });
 </script>
+
 
 </body>
 </html>
