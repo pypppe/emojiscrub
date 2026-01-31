@@ -94,7 +94,45 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         streak++;
 
-if (streak > 100) {
+if (streak === 200) {
+    feedback.textContent = "200!";
+} else if (streak === 250) {
+    feedback.textContent = "Okay I get it, you're cheating.";
+} else if (streak === 300) {
+    feedback.textContent = "👏👏👏";
+} else if (streak === 350) {
+    feedback.textContent = "👏👏👏👏";
+} else if (streak === 400) {
+    feedback.textContent = "Are you a robot ✅";
+} else if (streak === 450) {
+    feedback.textContent = "*sleepy*, oh hey did u get it right again?";
+} else if (streak === 500) {
+    feedback.textContent = "500! 👏👏👏";
+} else if (streak === 550) {
+    feedback.textContent = "You're really... focused...";
+} else if (streak === 600) {
+    feedback.textContent = "I'm getting sleepy...";
+} else if (streak === 650) {
+    feedback.textContent = "💤💤💤";
+} else if (streak === 700) {
+    feedback.textContent = "😴😴😴";
+} else if (streak === 750) {
+    feedback.textContent = "🥱🥱🥱";
+} else if (streak === 800) {
+    feedback.textContent = "Oh hey it's morning..";
+} else if (streak === 850) {
+    feedback.textContent = "Dude you're still typing..?";
+} else if (streak === 900) {
+    feedback.textContent = "Okay. fine. you're nearly there.";
+} else if (streak === 950) {
+    feedback.textContent = "50 more left to go.";
+} else if (streak === 1000) {
+    feedback.textContent = "You've done it, 1000!";
+} else if (streak === 2000) {
+    feedback.textContent = "1000+1000";
+} else if (streak === 3000) {
+    feedback.textContent = "Okay I'm finished.";
+} else if (streak > 100) {
     feedback.textContent = "💯💯💯";
 } else if (streak > 50) {
     feedback.textContent = "You're cheating.";
