@@ -1,3 +1,4 @@
+
 const puzzles = [
     { emoji: "🚪🔑", answer: "door key", hint: "Used to open a door" },
     { emoji: "🏠📃", answer: "homework", hint: "Teachers give you this to do at home." },
@@ -93,32 +94,33 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         streak++;
 
-        const feedbackOptions = [
-            "👏👏👏",
-            "You're cheating.",
-            "Your English is beautiful.",
-            "You should be a book writer!",
-            "Try Again!, sike!",
-            "I know something's up.",
-            "Are you cheating?",
-            "I can't believe you.",
-            "Hello?! are you cheating..?",
-            "That's right!",
-            "Wowie! You're good.",
-            "Congratulations!",
-            "Correct!"
-        ];
-
-        let optionsToPick = feedbackOptions;
-
-        if (streak > 50) {
-            optionsToPick = feedbackOptions.slice(0, 3);
-        } else if (streak > 30) {
-            optionsToPick = feedbackOptions.slice(0, 6);
-        }
-
-        const randomIndex = Math.floor(Math.random() * optionsToPick.length);
-        feedback.textContent = optionsToPick[randomIndex];
+if (streak > 100) {
+    feedback.textContent = "💯💯💯";
+} else if (streak > 50) {
+    feedback.textContent = "You're cheating.";
+} else if (streak > 45) {
+    feedback.textContent = "45, no way.";
+} else if (streak > 40) {
+    feedback.textContent = "Your English must be brilliant!";
+} else if (streak > 35) {
+    feedback.textContent = "Try Again!, sike!";
+} else if (streak > 30) {
+    feedback.textContent = "I know something's up.";
+} else if (streak > 25) {
+    feedback.textContent = "Are you cheating?";
+} else if (streak > 20) {
+    feedback.textContent = "I can't believe you.";
+} else if (streak > 15) {
+    feedback.textContent = "You're doing really great.";
+} else if (streak >= 10) {
+    feedback.textContent = "You're excellent.";
+} else if (streak >= 5) {
+    feedback.textContent = "I'm proud of you.";
+} else if (streak >= 3) {
+    feedback.textContent = "You're great.";
+} else {
+    feedback.textContent = "Correct!";
+}
 
         setTimeout(newPuzzle, 1000);
     } else {
@@ -126,3 +128,5 @@ function checkAnswer() {
         streak = 0;
     }
 }
+
+newPuzzle();
