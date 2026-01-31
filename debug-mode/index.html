@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Mode</title>
+  <title>Under Construction</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   <style>
@@ -27,15 +27,23 @@
       font-size: 3rem;
       text-align: center;
     }
+
+    img.emoji {
+      height: 1.2em;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
-  <h1>🚧 Under Construction 🚧</h1>
+  <h1 id="under-construction">🚧 Under Construction 🚧</h1>
 
   <script>
-    twemoji.parse(document.body, {
-      folder: 'svg',
-      ext: '.svg'
+    document.addEventListener("DOMContentLoaded", function() {
+      twemoji.parse(document.getElementById('under-construction'), {
+        folder: 'svg',
+        ext: '.svg',
+        className: 'emoji'
+      });
     });
   </script>
 </body>
