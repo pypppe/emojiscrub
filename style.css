@@ -258,7 +258,7 @@ right: 140px;
 
 .welcome-message {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #000000;
     margin-top: 10px;
     opacity: 1;
     transition: opacity 2s ease;
