@@ -186,6 +186,11 @@ genderContinue.addEventListener('click',()=>{
 document.getElementById('trackingContinue').addEventListener('click',()=>{
     showScreen(document.getElementById('trackingScreen'),document.getElementById('finishScreen'));
 });
+
+const finishScreen = document.getElementById('finishScreen');
+finishScreen.addEventListener('transitionend', () => {
+    localStorage.setItem('FINISHSCREEN_COMPLETED_ESCRUB', 'true');
+});
 </script>
 
 </body>
