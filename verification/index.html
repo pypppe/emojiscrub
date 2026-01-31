@@ -104,7 +104,10 @@ const sentences = [
   "Hello World",
   "Emojiscrub",
   "Quick brown fox",
-  "JavaScript is fun"
+  "JavaScript is fun",
+  "United Kingdom",
+  "United States of America",
+  "astrarune"
 ];
 
 const challengeText = document.getElementById('challenge-text');
@@ -120,9 +123,9 @@ if(localStorage.getItem('humanproven_escrub')) {
 
 let typingTimer;
 input.addEventListener('input', () => {
-  feedback.innerHTML = ''; // clear feedback
+  feedback.innerHTML = '';
   clearTimeout(typingTimer);
-  typingTimer = setTimeout(checkInput, 2000); // 2 sec after last key
+  typingTimer = setTimeout(checkInput, 2000);
 });
 
 function checkInput() {
@@ -163,7 +166,7 @@ function checkInput() {
       </div>
       `;
     }
-  }, 500); // spinner delay
+  }, 500);
 }
 </script>
 </body>
