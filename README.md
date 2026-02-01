@@ -7,9 +7,11 @@ Emojiscrub is a fun little **web-based emoji game** where you test your brainpow
 
 ## 🎮 How It Works
 
-1. You'll be given two emojis
-2. You'll need to guess what it means.
-3. if you get it correctly, it loops.
+1. You'll be given two emojis  
+2. You'll need to guess what it means.  
+3. if you get it correctly, it loops.  
+
+![Game Preview](https://raw.githubusercontent.com/pypppe/pypppe/refs/heads/main/escrub_preview.png)
 
 ---
 
