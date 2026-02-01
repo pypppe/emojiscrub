@@ -48,7 +48,7 @@ body, input, button, .feedback {
   top: 95px;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0.5;
+  opacity: 0;
   font-size: 10px;
   color: #000000; 
   text-align: center;
