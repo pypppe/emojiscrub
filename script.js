@@ -62,7 +62,9 @@ document.title = [
   "Emojiscrub | Official Website",
   "Emojiscrub | The Game",
   "Emojiscrub | Webgame",
-  "Emojiscrub | By Astrarune",
+  "Emojiscrub | By Zandovo",
+  "Emojiscrub | Trusted.",
+"Emojiscrub | Privacy Respect.",
   "Emojiscrub | Open-source on GitHub."
 ][Math.floor(Math.random() * 3)];
 
