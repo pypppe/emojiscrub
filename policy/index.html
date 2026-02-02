@@ -65,7 +65,7 @@
       background: var(--divider);
       margin-top: 24px;
     }
-    
+
     .faq {
       margin-top: 12px;
     }
@@ -73,7 +73,6 @@
     details {
       border-bottom: 1px solid var(--divider);
       padding: 16px 0;
-      transition: background 0.2s ease;
     }
 
     summary {
@@ -103,20 +102,7 @@
 
     details p {
       margin-top: 12px;
-      animation: fadeIn 0.25s ease;
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-4px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
 
     .back {
       margin-top: 72px;
@@ -130,31 +116,36 @@
 
     <h1>Privacy Policy</h1>
 
-    <h2>How we use your data.</h2>
+    <h2>How we use your data</h2>
     <p>
-      We do not collect your data, cookies, etc..., we don't know what you do on
-      the site, what words you guess, or anything. Your data is private and isn't
-      used to improve performance, improve easier or harder words based on guesses etc...
+      Your privacy is taken seriously. Emojiscrub does not collect, track, store,
+      or analyze any personal information. We do not monitor your gameplay,
+      record guessed words, or observe how you interact with the site.
+      Your activity remains entirely private and is never used for analytics,
+      performance optimization, or difficulty adjustments.
     </p>
 
     <div class="divider"></div>
 
     <h2>Cache</h2>
     <p>
-      When you press Skip on the load menu, create an account, or even change
-      settings, that is saved via Localstorage to remember, if you wish to clear
-      all cache please
-      <a href="https://escrub.astrarune.com/clear_cache">click here</a>.
+      Certain preferences—such as skipping the loading screen, account actions,
+      or customized settings—are saved locally on your device using Local Storage.
+      This allows Emojiscrub to remember your choices for a smoother experience.
+      If you wish to remove all locally stored data, you may do so at any time by
+      <a href="https://escrub.astrarune.com/clear_cache">clicking here</a>.
     </p>
 
     <div class="divider"></div>
 
     <h2>Ads &amp; Promotions</h2>
     <p>
-      There are no ads or promotions in Emojiscrub, we believe ADS &amp; promotions
-      ruin the fun/experience for anyone. We don't make any money from this site,
-      and you shouldn't be forced to watch ADS for a game where you guess words,
-      this game is created for anyone to enjoy.
+      Emojiscrub is proudly free of advertisements and promotional content.
+      We believe ads interrupt immersion and diminish the enjoyment of a game
+      designed to be simple and fun. The project generates no revenue, and
+      players are never required to watch ads to play.
+      However, advertisements present in the mobile version are outside of our
+      control and cannot currently be removed.
     </p>
 
     <div class="divider"></div>
@@ -164,18 +155,19 @@
       <details>
         <summary>How do I clear specific cache?</summary>
         <p>
-          You sort of can, if you wish to log out you have to press Log Out on the
-          account page, you cannot remove the cache for loading screen unless you
-          clear all cache, and you can reset your Settings by pressing Reset Settings.
+          Some data can be cleared individually. Logging out from the Account page
+          will remove account-related information, and settings can be restored
+          using the Reset Settings option. The loading screen preference can only
+          be removed by clearing all cache.
         </p>
       </details>
 
       <details>
         <summary>Is this game open-source?</summary>
         <p>
-          Yes, this game is fully open-source and the Electron version provides the
-          code with no modifications such as obsfucation, to view the GitHub page,
-          <a href="https://github.com/pypppe/emojiscrub">click here</a>.
+          Yes. Emojiscrub is fully open-source. The Electron version includes the
+          complete source code with no obfuscation. You can view the repository on
+          GitHub by <a href="https://github.com/pypppe/emojiscrub">clicking here</a>.
         </p>
       </details>
     </div>
