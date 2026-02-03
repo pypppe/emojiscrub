@@ -85,18 +85,18 @@
     });
 
   (async () => {
-    await step("Loading Scripts.", 4);
-    await step("Loading CSS", 12);
-    await step("Loading Account System", 8);
-    await step("Generating random Puzzle...", 2);
-    await step("Checking Accounts...", 1);
-    await step("Polishing up...", 2);
+    await step("Loading Scripts.", 120);
+    await step("Loading CSS", 1000);
+    await step("Loading Account System", 800);
+    await step("Generating random Puzzle...", 5);
+    await step("Checking Accounts...", 500);
+    await step("Polishing up...", 892);
     await step("Fixing some stuff..", 50);
-    await step("Loading Electron version...", 0.1);
-    await step("Loading Announcements", 3);
-    await step("Loading Twemoji...", 500);
-    await step("Loading Setup...", 6);
-    await step("Loading Data...", 2);
+    await step("Loading Electron version...", 150);
+    await step("Loading Announcements", 1);
+    await step("Loading Twemoji...", 1500);
+    await step("Loading Setup...", 2000);
+    await step("Loading Data...", 5);
     await step("Loading Setup Data...", 10);
     await step("Polishing Up...", 52);
     await step("Communicating to Verification", 2);
