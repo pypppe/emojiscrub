@@ -9,7 +9,7 @@ const continueBtn = document.getElementById('continueBtn');
 const hasAccepted = localStorage.getItem('betaAccepted');
 
 function isUsernameBlacklisted(name) {
-  const blacklist = ['unscrub', 'astrarune', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
+  const blacklist = ['unscrub', 'astrarune', 'zandovo', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
   for (const term of blacklist) {
     if (name.toLowerCase().includes(term)) {
       return true;
@@ -39,7 +39,7 @@ function validateUsername() {
     return false;
   }
 
-  if (value.length > 30) {
+  if (value.length > 20) {
     usernameFeedback.textContent = "";
     return false;
   }
