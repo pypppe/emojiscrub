@@ -40,7 +40,7 @@ function validateUsername() {
   }
 
   if (value.length > 20) {
-    usernameFeedback.textContent = "";
+    usernameFeedback.textContent = "Username cannot exceed 20 characters.";
     return false;
   }
 
