@@ -41,6 +41,7 @@ function validateUsername() {
 
   if (value.length > 20) {
     usernameFeedback.textContent = "Username cannot exceed 20 characters.";
+    usernameFeedback.className = "feedback error";
     return false;
   }
 
