@@ -26,11 +26,19 @@
   `;
 
   const title = document.createElement("div");
-  title.textContent = "Loading...";
   title.style.cssText = `
     font-size: 28px;
     font-weight: 600;
+    margin-bottom: 10px;
   `;
+
+  const img = document.createElement("img");
+  img.src = "https://escrub.astrarune.com/zandovo.png";
+  img.style.cssText = `
+    width: 200px;  /* adjust size as needed */
+    height: auto;
+  `;
+  title.appendChild(img);
 
   const subtitle = document.createElement("div");
   subtitle.textContent = "Loading Scripts.";
