@@ -86,7 +86,7 @@
 
   (async () => {
     await step("Loading Scripts.", 120);
-    await step("Loading CSS", 1000);
+    await step("Loading CSS", 500);
     await step("Loading Account System", 800);
     await step("Generating random Puzzle...", 5);
     await step("Checking Accounts...", 500);
@@ -95,7 +95,7 @@
     await step("Loading Electron version...", 150);
     await step("Loading Announcements", 1);
     await step("Loading Twemoji...", 1500);
-    await step("Loading Setup...", 2000);
+    await step("Loading Setup...", 1000);
     await step("Loading Data...", 5);
     await step("Loading Setup Data...", 10);
     await step("Polishing Up...", 52);
