@@ -135,10 +135,35 @@ if(localStorage.getItem('humanproven_escrub')) {
 }
 
 let typingTimer;
+let startTime = null;
+let lastLength = 0;
+
 input.addEventListener('input', () => {
   feedback.innerHTML = '';
+
+  if (input.value.length === 1) {
+    startTime = performance.now();
+  }
+
+  if (input.value.length - lastLength > 5) {
+    const elapsed = (performance.now() - startTime) / 1000;
+    if (elapsed < 0.7) {
+      showFailure("Typing too fast. Verification unsuccessful.");
+      return;
+    }
+  }
+
+  lastLength = input.value.length;
+
   clearTimeout(typingTimer);
   typingTimer = setTimeout(checkInput, 2000);
+});
+
+input.addEventListener('keydown', (e) => {
+  if (e.key === "Enter") {
+    clearTimeout(typingTimer);
+    checkInput();
+  }
 });
 
 function checkInput() {
@@ -158,7 +183,7 @@ function checkInput() {
   `;
 
   setTimeout(() => {
-    if(input.value.trim() === sentence) {
+    if(input.value.trim().toUpperCase() === sentence.toUpperCase()) {
       localStorage.setItem('humanproven_escrub', 'true');
       feedback.innerHTML = `
       <div class="message">
@@ -170,16 +195,20 @@ function checkInput() {
       `;
       setTimeout(() => window.location.href = "https://escrub.astrarune.com", 1000);
     } else {
-      feedback.innerHTML = `
-      <div class="message">
-      <svg fill="#000000" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"/>
-      </svg>
-      <span>Incorrect spelling. Please check again.</span>
-      </div>
-      `;
+      showFailure("Incorrect spelling. Please check again.");
     }
   }, 500);
+}
+
+function showFailure(message) {
+  feedback.innerHTML = `
+  <div class="message">
+  <svg fill="#000000" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"/>
+  </svg>
+  <span>${message}</span>
+  </div>
+  `;
 }
 </script>
 </body>
