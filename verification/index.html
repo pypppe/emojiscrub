@@ -141,19 +141,28 @@ let lastLength = 0;
 input.addEventListener('input', () => {
   feedback.innerHTML = '';
 
-  if (input.value.length === 1) {
-    startTime = performance.now();
+  const currentLength = input.value.length;
+
+  if (currentLength === 0) {
+    startTime = null;
+    lastLength = 0;
+    return;
   }
 
-  if (input.value.length - lastLength > 5) {
-    const elapsed = (performance.now() - startTime) / 1000;
-    if (elapsed < 0.7) {
-      showFailure("Typing too fast. Verification unsuccessful.");
-      return;
-    }
+  if (!startTime) startTime = performance.now();
+
+  const newChars = currentLength - lastLength;
+
+  const elapsed = (performance.now() - startTime) / 1000;
+  if (newChars > 5 && elapsed < 0.7) {
+    showFailure("Typing too fast. Verification unsuccessful.");
+    input.value = "";
+    startTime = null;
+    lastLength = 0;
+    return;
   }
 
-  lastLength = input.value.length;
+  lastLength = currentLength;
 
   clearTimeout(typingTimer);
   typingTimer = setTimeout(checkInput, 2000);
