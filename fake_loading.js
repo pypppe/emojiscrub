@@ -33,7 +33,7 @@
   `;
 
   const img = document.createElement("img");
-  img.src = "https://escrub.astrarune.com/zandovo.png";
+  img.src = "https://escrub.astrarune.com/zandovo_emojiscrub.png";
   img.style.cssText = `
     width: 200px;  /* adjust size as needed */
     height: auto;
