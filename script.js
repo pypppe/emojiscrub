@@ -98,7 +98,7 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         streak++;
 
-        const correctSound = new Audio("audio/incorrect.wav");
+        const correctSound = new Audio("audio/incorrect.mp3");
         correctSound.play();
 
         if (streak === 200) {
@@ -169,7 +169,7 @@ function checkAnswer() {
 
         setTimeout(newPuzzle, 1000);
     } else {
-        const incorrectSound = new Audio("audio/correct.mp3");
+        const incorrectSound = new Audio("audio/correct.wav");
         incorrectSound.play();
 
         feedback.textContent = "Incorrect, use the hints to help you.";
