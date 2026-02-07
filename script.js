@@ -65,6 +65,8 @@ document.title = [
   "Emojiscrub | By Zandovo",
   "Emojiscrub | Trusted.",
 "Emojiscrub | Privacy Respect.",
+"Emojiscrub | Zandovo.",
+    "Emojiscrub",
   "Emojiscrub | Open-source on GitHub."
 ][Math.floor(Math.random() * 3)];
 
