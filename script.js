@@ -176,4 +176,11 @@ function checkAnswer() {
         streak = 0;
     }
 }
+
+const clickSound = new Audio("audio/click.wav");
+document.addEventListener("click", function () {
+    clickSound.currentTime = 0;
+    clickSound.play();
+});
+
 newPuzzle();
