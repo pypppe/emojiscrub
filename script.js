@@ -109,16 +109,9 @@ if (localStorage.getItem("disableTwemoji") !== "true") {
 let isCooldown = false;
 
 answerInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-        if (isCooldown) return;
-
-        isCooldown = true;
-        checkAnswer();
-
-        setTimeout(() => {
-            isCooldown = false;
-        }, 500);
-    }
+    if (e.key === "Enter") {
+        checkAnswer();
+    }
 });
 
 function checkAnswer() {
