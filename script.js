@@ -108,10 +108,13 @@ if (localStorage.getItem("disableTwemoji") !== "true") {
 
 answerInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        checkAnswer();
+        e.preventDefault();
+
+        setTimeout(() => {
+            checkAnswer();
+        }, 1000);
     }
 });
-
 
 function checkAnswer() {
     const userAnswer = answerInput.value.trim().toLowerCase();
