@@ -106,13 +106,18 @@ if (localStorage.getItem("disableTwemoji") !== "true") {
     feedback.textContent = "";
 }
 
+let isCooldown = false;
+
 answerInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        e.preventDefault();
+        if (isCooldown) return;
+
+        isCooldown = true;
+        checkAnswer();
 
         setTimeout(() => {
-            checkAnswer();
-        }, 1000);
+            isCooldown = false;
+        }, 500);
     }
 });
 
