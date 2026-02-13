@@ -1,20 +1,26 @@
-(function() {
-    let currentUrl = window.location.href;
-  
-    const queryString = "ZANDOVO_TRUE_OLDCOMPANY_ASTRARUNE";
-
-    if (!currentUrl.includes(queryString)) {
-        let newUrl;
-
-        if (currentUrl.includes("?")) {
-            newUrl = currentUrl + "&" + queryString;
-        } else {
-            newUrl = currentUrl + "?" + queryString;
-        }
-
+(function () {
+    function replaceQuery(queryString) {
+        let currentUrl = window.location.href.split("?")[0];
+        let newUrl = currentUrl + "?" + queryString;
         window.history.replaceState(null, "", newUrl);
-        console.log("Query string added:", queryString);
-    } else {
-        console.log("Query string already present.");
+        console.log("Query string changed to:", queryString);
     }
+
+    replaceQuery("ZANDOVO_TRUE_OLDCOMPANY_ASTRARUNE");
+
+    setTimeout(() => {
+        replaceQuery("ZANDOVO_TRUE");
+    }, 300);
+
+    setTimeout(() => {
+        replaceQuery("ASTRARUNE_FALSE");
+    }, 400);
+
+    setTimeout(() => {
+        replaceQuery("ZANDOVO_TRUE");
+    }, 500);
+
+    setTimeout(() => {
+        replaceQuery("ZANDOVO_WEBGAME");
+    }, 800);
 })();
