@@ -165,19 +165,6 @@ if (storedName) {
 setTimeout(() => {
     welcomeEl.style.opacity = '0';
 }, 2000);
-
-let currentUrl = window.location.href;
-
-if (!currentUrl.includes("?ZANDOVO_TRUE_OLDCOMPANY_ASTRARUNE")) {
-    let newUrl;
-    if (currentUrl.includes("?")) {
-        newUrl = currentUrl + "&ZANDOVO_TRUE_OLDCOMPANY_ASTRARUNE";
-    } else {
-        newUrl = currentUrl + "?ZANDOVO_TRUE_OLDCOMPANY_ASTRARUNE";
-    }
-
-    window.history.replaceState(null, "", newUrl);
-}
 </script>
 
 
