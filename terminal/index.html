@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Emojiscrub</title>
+
+<!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #000;
+    text-align: center;
+}
+
+.hero {
+    padding: 120px 20px 60px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.green {
+    background: #2ecc71;
+    color: #000;
+}
+
+.green:hover {
+    background: #27ae60;
+}
+
+.blurple {
+    background: #5865F2;
+    color: #fff;
+}
+
+.blurple:hover {
+    background: #4752C4;
+}
+
+code {
+    display: block;
+    text-align: left;
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+
+.copy-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: #5865F2;
+    color: #fff;
+}
+
+.copy-btn:hover {
+    background: #4752C4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Terminal Emojiscrub</h1>
+    <div class="subtitle">
+        Play Emojiscrub, but inside your Linux & Windows terminal.
+    </div>
+
+    <h2>Windows Setup;</h2>
+
+    <a class="button green" href="https://nodejs.org/en/download" target="_blank">
+        Node.js
+    </a>
+
+    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" target="_blank">
+        Emojiscrub Terminal
+    </a>
+</div>
+
+<div class="section">
+    <h2>Linux</h2>
+
+    <button class="copy-btn" onclick="copyCode()">Copy to Clipboard</button>
+
+<code id="codeblock">
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+\. "$HOME/.nvm/nvm.sh"
+
+nvm install 24
+
+node -v # Should print "v24.13.1".
+
+npm -v # Should print "11.8.0".
+</code>
+
+    <br>
+
+    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" target="_blank">
+        Emojiscrub Terminal
+    </a>
+</div>
+
+<script>
+function copyCode() {
+    const code = document.getElementById("codeblock").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        alert("Copied to clipboard!");
+    });
+}
+</script>
+
+</body>
+</html>
