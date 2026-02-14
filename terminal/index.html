@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terminal Emojiscrub</title>
 
-<!-- Poppins Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,27 +17,27 @@ body {
 }
 
 .hero {
-    padding: 120px 20px 60px;
+    padding: 110px 20px 60px;
 }
 
 h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
     font-size: 1rem;
     opacity: 0.5;
     font-style: italic;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .section {
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .button {
@@ -72,25 +71,25 @@ h2 {
 code {
     display: block;
     text-align: left;
-    background: #f5f5f5;
-    padding: 20px;
+    background: #f4f4f4;
+    padding: 25px;
     margin: 20px auto;
-    max-width: 700px;
-    border-radius: 8px;
+    max-width: 750px;
+    border-radius: 10px;
     white-space: pre-wrap;
     font-family: monospace;
+    font-size: 14px;
 }
 
 .copy-btn {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     background: #5865F2;
     color: #fff;
+    margin-bottom: 20px;
 }
 
 .copy-btn:hover {
@@ -109,19 +108,25 @@ code {
 
     <h2>Windows Setup;</h2>
 
-    <a class="button green" href="https://nodejs.org/en/download" target="_blank">
-        Node.js
+    <a class="button green"
+       href="https://nodejs.org/en/download"
+       target="_blank">
+       Node.js
     </a>
 
-    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" target="_blank">
-        Emojiscrub Terminal
+    <a class="button blurple"
+       href="https://escrub.astrarune.com/terminal/emojiscrub.js"
+       download="emojiscrub.js">
+       Emojiscrub Terminal
     </a>
 </div>
 
 <div class="section">
     <h2>Linux</h2>
 
-    <button class="copy-btn" onclick="copyCode()">Copy to Clipboard</button>
+    <button class="copy-btn" onclick="copyCode()">
+        Copy to Clipboard
+    </button>
 
 <code id="codeblock">
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -137,8 +142,10 @@ npm -v # Should print "11.8.0".
 
     <br>
 
-    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" target="_blank">
-        Emojiscrub Terminal
+    <a class="button blurple"
+       href="https://escrub.astrarune.com/terminal/emojiscrub.js"
+       download="emojiscrub.js">
+       Emojiscrub Terminal
     </a>
 </div>
 
