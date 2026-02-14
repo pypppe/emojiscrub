@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emojiscrub Terminal Tutorial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #000;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+code {
+    display: block;
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 10px 5px 30px 0;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.green {
+    background: #2ecc71;
+    color: #000;
+}
+
+.green:hover {
+    background: #27ae60;
+}
+
+.blurple {
+    background: #5865F2;
+    color: #fff;
+}
+
+.blurple:hover {
+    background: #4752C4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Emojiscrub Terminal Tutorial</h1>
+    <p>Emojiscrub Terminal is finally here, and here's how you get it running on your system.</p>
+
+    <h2>Linux</h2>
+    <p>1️⃣ Get the code below, then open a terminal and paste it in, then press Enter:</p>
+    <code>
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 24
+node -v # Should print "v24.13.1".
+npm -v  # Should print "11.8.0".
+    </code>
+    <p>2️⃣ Once it finishes, download the Emojiscrub Terminal JavaScript:</p>
+    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" download="emojiscrub.js">
+        Download Emojiscrub Terminal
+    </a>
+    <p>3️⃣ After downloading, go to the directory containing <code>emojiscrub.js</code>, right-click, and select <strong>'Open in Terminal'</strong>.</p>
+    <p>4️⃣ Run it with:</p>
+    <code>node emojiscrub.js</code>
+
+    <h2>Windows</h2>
+    <p>1️⃣ Download and install Node.js:</p>
+    <a class="button green" href="https://nodejs.org/en/download" target="_blank">Download Node.js</a>
+    <p>2️⃣ Download the Emojiscrub Terminal:</p>
+    <a class="button blurple" href="https://escrub.astrarune.com/terminal/emojiscrub.js" download="emojiscrub.js">
+        Download Emojiscrub Terminal
+    </a>
+    <p>3️⃣ Run the installer for Node.js, then go to the folder containing <code>emojiscrub.js</code>, right-click, and choose <strong>'Open in Terminal'</strong>.</p>
+    <p>4️⃣ Run it by typing:</p>
+    <code>node emojiscrub.js</code>
+
+    <p style="margin-top:50px; text-align:center; opacity:0.6;">You're all set! Enjoy Emojiscrub in your terminal 🚀</p>
+</div>
+
+</body>
+</html>
