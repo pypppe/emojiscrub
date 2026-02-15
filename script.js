@@ -76,7 +76,6 @@ const puzzles = [
     { emoji: "🇯🇵🗣️", answer: "japanese", hint: "This is the language people that live in Japan speak in." },
     { emoji: "🇩🇪🗣️", answer: "german", hint: "This is the language people that live in Germany speak in." },
     { emoji: "🇰🇷🗣️", answer: "korean", hint: "This is the language people that live in South Korea speak in." },
-    { emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿🗣️", answer: "english", hint: "This is the language people that live in England speak in." },
     { emoji: "🇷🇴🇹🇩", answer: "romania", hint: "Romania or Chad?" },
     { emoji: "🇹🇩🇷🇴", answer: "chad", hint: "Romania or Chad?" },
     { emoji: "🇮🇹😋", answer: "pizza", hint: "This food usually has pepperoni on it." }
