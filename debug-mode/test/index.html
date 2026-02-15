@@ -13,33 +13,53 @@
 
   .topbar {
     position: fixed;
-    top: 10px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 10px 30px;
+    border-radius: 25px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: fit-content;
+    min-width: 800px;
   }
 
   .topbar-left {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 28px;
+    letter-spacing: 2px;
   }
 
   .topbar-right {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
   }
 
   .topbar-right div:hover {
     color: #007BFF;
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+
+  @media (max-width: 900px) {
+    .topbar {
+      min-width: 90%;
+      padding: 15px 30px;
+    }
+
+    .topbar-left {
+      font-size: 24px;
+    }
+
+    .topbar-right {
+      gap: 25px;
+      font-size: 18px;
+    }
   }
 </style>
 </head>
