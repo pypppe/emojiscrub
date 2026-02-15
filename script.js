@@ -68,6 +68,17 @@ const puzzles = [
     { emoji: "🧼🛁", answer: "bath", hint: "You take these to smell fresh and feel clean." },
     { emoji: "🟩🍎", answer: "green apple", hint: "This type of apple is healthier than Red Apples." },
     { emoji: "💈✂️", answer: "barber", hint: "People go here, usually men to get a haircut." },
+    { emoji: "🟨🧑‍💻", answer: "javascript", hint: "This programming language is used to make sites work." },
+    { emoji: "🗒️📓", answer: "notebook", hint: "This is a book where you take notes." },
+    { emoji: "🦶⚽️", answer: "football", hint: "This is a sport. It is called Soccer in America." },
+    { emoji: "👩‍🔬🧪", answer: "scientist", hint: "These people like Science." },
+    { emoji: "🎯🛍️", answer: "target", hint: "This is a shop in America." },
+    { emoji: "🇯🇵🗣️", answer: "japanese", hint: "This is the language people that live in Japan speak in." },
+    { emoji: "🇩🇪🗣️", answer: "german", hint: "This is the language people that live in Germany speak in." },
+    { emoji: "🇰🇷🗣️", answer: "korean", hint: "This is the language people that live in South Korea speak in." },
+    { emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿🗣️", answer: "english", hint: "This is the language people that live in England speak in." },
+    { emoji: "🇷🇴🇹🇩", answer: "romania", hint: "Romania or Chad?" },
+    { emoji: "🇹🇩🇷🇴", answer: "chad", hint: "Romania or Chad?" },
     { emoji: "🇮🇹😋", answer: "pizza", hint: "This food usually has pepperoni on it." }
 ];
 
