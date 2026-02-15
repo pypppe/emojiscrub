@@ -48,7 +48,6 @@
     opacity: 0.6;
   `;
 
-  // NEW: Percentage Text
   const percentText = document.createElement("div");
   percentText.textContent = "0%";
   percentText.style.cssText = `
@@ -108,23 +107,39 @@
     ["Checking Javascript...", 3],
   ];
 
-  const totalSteps = steps.length;
-  let currentStep = 0;
+  // Total time of all steps for smooth percentage calculation
+  const totalTime = steps.reduce((acc, step) => acc + step[1], 0);
 
-  const step = (text, time) =>
+  let elapsedTime = 0;
+
+  const step = ([text, time]) =>
     new Promise(resolve => {
       subtitle.textContent = text;
-      currentStep++;
+      const startPercent = Math.floor((elapsedTime / totalTime) * 100);
+      elapsedTime += time;
+      const endPercent = Math.floor((elapsedTime / totalTime) * 100);
 
-      const percent = Math.floor((currentStep / totalSteps) * 100);
-      percentText.textContent = percent + "%";
+      const duration = time;
+      const startTime = performance.now();
 
-      setTimeout(resolve, time);
+      function animate(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const currentPercent = Math.floor(startPercent + (endPercent - startPercent) * progress);
+        percentText.textContent = currentPercent + "%";
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          resolve();
+        }
+      }
+
+      requestAnimationFrame(animate);
     });
 
   (async () => {
-    for (const [text, time] of steps) {
-      await step(text, time);
+    for (const s of steps) {
+      await step(s);
     }
 
     subtitle.textContent = "Loaded, enjoy playing.";
