@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topbar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+  .topbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .topbar-left {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .topbar-right {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .topbar-right div:hover {
+    color: #007BFF;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">EMOJISCRUB</div>
+  <div class="topbar-right">
+    <div>GAME</div>
+    <div>TERMINAL</div>
+    <div>ZANDOVO</div>
+  </div>
+</div>
+
+</body>
+</html>
