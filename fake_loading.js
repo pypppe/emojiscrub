@@ -35,7 +35,7 @@
   const img = document.createElement("img");
   img.src = "https://escrub.astrarune.com/zandovo_emojiscrub.png";
   img.style.cssText = `
-    width: 200px;  /* adjust size as needed */
+    width: 200px;
     height: auto;
   `;
   title.appendChild(img);
@@ -45,7 +45,16 @@
   subtitle.style.cssText = `
     margin-top: 6px;
     font-size: 14px;
-    opacity: 0.5;
+    opacity: 0.6;
+  `;
+
+  // NEW: Percentage Text
+  const percentText = document.createElement("div");
+  percentText.textContent = "0%";
+  percentText.style.cssText = `
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.4;
   `;
 
   const skipBtn = document.createElement("button");
@@ -67,44 +76,59 @@
 
   skipBtn.onclick = () => {
     localStorage.setItem("loadingOverlaySkipped", "true");
-
     overlay.style.opacity = "0";
     setTimeout(() => overlay.remove(), 600);
   };
 
   container.appendChild(title);
   container.appendChild(subtitle);
+  container.appendChild(percentText);
   overlay.appendChild(skipBtn);
   overlay.appendChild(container);
   document.body.appendChild(overlay);
 
+  const steps = [
+    ["Loading Scripts.", 120],
+    ["Loading CSS", 500],
+    ["Loading Account System", 800],
+    ["Generating random Puzzle...", 5],
+    ["Checking Accounts...", 500],
+    ["Polishing up...", 892],
+    ["Fixing some stuff..", 50],
+    ["Loading Electron version...", 150],
+    ["Loading Announcements", 1],
+    ["Loading Twemoji...", 1500],
+    ["Loading Setup...", 1000],
+    ["Loading Data...", 5],
+    ["Loading Setup Data...", 10],
+    ["Polishing Up...", 52],
+    ["Communicating to Verification", 2],
+    ["Loading GitHub", 2],
+    ["Communicating to Cloudflare...", 12],
+    ["Checking Javascript...", 3],
+  ];
+
+  const totalSteps = steps.length;
+  let currentStep = 0;
+
   const step = (text, time) =>
     new Promise(resolve => {
       subtitle.textContent = text;
+      currentStep++;
+
+      const percent = Math.floor((currentStep / totalSteps) * 100);
+      percentText.textContent = percent + "%";
+
       setTimeout(resolve, time);
     });
 
   (async () => {
-    await step("Loading Scripts.", 120);
-    await step("Loading CSS", 500);
-    await step("Loading Account System", 800);
-    await step("Generating random Puzzle...", 5);
-    await step("Checking Accounts...", 500);
-    await step("Polishing up...", 892);
-    await step("Fixing some stuff..", 50);
-    await step("Loading Electron version...", 150);
-    await step("Loading Announcements", 1);
-    await step("Loading Twemoji...", 1500);
-    await step("Loading Setup...", 1000);
-    await step("Loading Data...", 5);
-    await step("Loading Setup Data...", 10);
-    await step("Polishing Up...", 52);
-    await step("Communicating to Verification", 2);
-    await step("Loading GitHub", 2);
-    await step("Communicating to Cloudflare...", 12);
-    await step("Checking Javascript...", 3);
+    for (const [text, time] of steps) {
+      await step(text, time);
+    }
 
     subtitle.textContent = "Loaded, enjoy playing.";
+    percentText.textContent = "100%";
 
     setTimeout(() => {
       overlay.style.opacity = "0";
