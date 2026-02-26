@@ -109,6 +109,60 @@
       font-size: 16px;
       font-weight: 500;
     }
+
+    .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.topbar-logo {
+  height: 34px;
+  width: auto;
+}
+
+.topbar-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.topbar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.topbar-icon svg path {
+  stroke: black;
+  fill: none;
+}
+
+.topbar-icon:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
   </style>
 </head>
 <body>
