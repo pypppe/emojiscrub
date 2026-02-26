@@ -77,7 +77,7 @@ panel.innerHTML = `
         <div class="setting-item" data-id="enableBgm">
           <div class="setting-text">
             <div class="setting-label">Background Music</div>
-            <div class="setting-desc">Toggle loop for bgm.mp3.</div>
+            <div class="setting-desc">Toggle music.</div>
           </div>
           <input type="checkbox" id="enableBgm">
         </div>
@@ -85,8 +85,8 @@ panel.innerHTML = `
 
     <div class="tab-content" id="danger">
         <div style="background: rgba(255, 77, 77, 0.1); padding: 15px; border-radius: 8px;">
-            <p style="font-size: 13px; color: #ff4d4d; margin-bottom: 15px;">Clear all settings and reload?</p>
-            <button id="resetSettings">Reset Settings</button>
+            <p style="font-size: 13px; color: #ff4d4d; margin-bottom: 15px;">Clear all data and reload?</p>
+            <button id="resetSettings">Reset Data</button>
         </div>
     </div>
 
