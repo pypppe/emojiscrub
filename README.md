@@ -1,49 +1,22 @@
-# 🧩 Emojiscrub
+![Game Preview](https://raw.githubusercontent.com/pypppe/emojiscrub/refs/heads/main/thumbnail.png)
+<br />
 
-Welcome to the **official GitHub repository** for [Emojiscrub](https://escrub.astrarune.com)!  
-Emojiscrub is a fun little **web-based emoji game** where you test your brainpower.
+[![HTML5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
----
+# About
+Emojiscrub is a fun web-game where you are shown emojis, e.g. "🛍️🎯", and that emoji has an answer. (So the answer would be Target).
+And you have to guess it correctly. Look above the emojis for hints. (or just look at the code.)
 
-## 🎮 How It Works
+# Data Management
+We collect 0 data. We don't know your IP, Country, house location, etc...
+We don't even know what you do on the website.
 
-1. You'll be given two emojis  
-2. You'll need to guess what it means.  
-3. if you get it correctly, it loops.  
+but.. *why*?
+Well, it's because we wanna be the #1 company in the UK that *Doesnt* take data from anyone.
 
-![Game Preview](https://raw.githubusercontent.com/pypppe/pypppe/refs/heads/main/escrub_preview.png)
-
----
-
-## 🚫 Ads & Promotions
-
-We believe ads ruin the fun.  
-**Emojiscrub** is a **completely free** web game — made **for students and anyone**, not for profit.
-
-This project exists purely **for fun and creativity**, not commercialization. ✨
-Unfortunately, we cannot remove the ADs on the Mobile version of Emojiscrub.
-
----
-
-## 🛡️ Privacy & Data
-
-Your privacy is important to us.  
-**Emojiscrub does NOT:**
-- Track your location  
-- Collect personal data  
-- Monitor your gameplay or usage  
-
-You can enjoy the game safely, without worrying about ads, tracking, or data collection.  
-
----
-
-## 💌 Feedback & Updates
-
-I release updates often to improve the experience!  
-If you have feedback, ideas, or bug reports, please reach out:
-
-📧 **Email:** [py@astrarune.com](mailto:py@astrarune.com)
-
-You can email via **Outlook**, **Gmail**, or **Yahoo! Mail** — whatever works best for you.
-
-Thank you for playing and supporting Emojiscrub! 💚
+# License
+You can view our license by clicking [here!](https://github.com/pypppe/emojiscrub/blob/main/LICENSE)
+Thanks!
