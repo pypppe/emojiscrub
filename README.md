@@ -22,6 +22,6 @@ You can view our license by clicking [here!](https://github.com/pypppe/emojiscru
 Thanks!
 
 # Special Thanks
-- [minikirbe](https://www.youtube.com/@adrocpvp](https://www.youtube.com/@minikirbe) (Gave us the idea to add logging with Discord, and more settings.)
+- [minikirbe](https://youtube.com/@minikirbe) (Giving us ideas to add to Emojiscrub)
 - [Vercel](https://vercel.com) (Letting us host Emojiscrub for free.)
 - [GitHub](https://github.com) (Letting us create Emojiscrub for free.)
