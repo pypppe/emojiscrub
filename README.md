@@ -20,3 +20,8 @@ Well, it's because we wanna be the #1 company in the UK that *Doesnt* take data 
 # License
 You can view our license by clicking [here!](https://github.com/pypppe/emojiscrub/blob/main/LICENSE)
 Thanks!
+
+# Special Thanks
+- [Adro](https://www.youtube.com/@adrocpvp) (Gave us the idea to add logging with Discord, and more settings.)
+- [Vercel](https://vercel.com) (Letting us host Emojiscrub for free.)
+- [GitHub](https://github.com) (Letting us create Emojiscrub for free.)
