@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const code = req.query.code;
 
   if (!code) {
-    return res.redirect('/?error=no_code');
+    return res.status(200).send('ERROR: No code in URL');
   }
 
   const tokenRes = await fetch('https://discord.com/api/oauth2/token', {
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   const tokenData = await tokenRes.json();
 
   if (!tokenData.access_token) {
-    return res.redirect('/?error=token_failed');
+    return res.status(200).send(`ERROR: Token failed - ${JSON.stringify(tokenData)}`);
   }
 
   const userRes = await fetch('https://discord.com/api/users/@me', {
@@ -28,7 +28,6 @@ export default async function handler(req, res) {
   });
 
   const user = await userRes.json();
-
   const avatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
 
   res.redirect(`/accounts?discord_id=${user.id}&username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(avatar)}`);
