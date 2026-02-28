@@ -158,9 +158,9 @@ const applySettings = () => {
   });
 
   const vol = parseFloat(state.mainVolume);
-  document.querySelectorAll("audio").forEach(audio => {
-    if (audio !== bgMusic) audio.volume = vol;
-  });
+document.querySelectorAll("audio").forEach(audio => {
+  audio.volume = vol;
+});
 };
 
 panel.addEventListener("click", (e) => {
