@@ -212,6 +212,7 @@ function checkAnswer() {
 
 const clickSound = new Audio("audio/click.wav");
 document.addEventListener("click", function () {
+    clickSound.volume = parseFloat(localStorage.getItem("mainVolume") || "1.0");
     clickSound.currentTime = 0;
     clickSound.play();
 });
