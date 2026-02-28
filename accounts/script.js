@@ -8,6 +8,7 @@ const continueBtn = document.getElementById('continueBtn');
 
 const hasAccepted = localStorage.getItem('betaAccepted');
 
+// incase i get cancelled in the future the racial slurs are there so no one can make accounts with those words. not beacuse i am a racist loser
 function isUsernameBlacklisted(name) {
   const blacklist = ['unscrub', 'astrarune', 'zandovo', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
   for (const term of blacklist) {
