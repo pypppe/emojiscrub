@@ -131,8 +131,9 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         streak++;
 
-        const correctSound = new Audio("audio/incorrect.mp3");
-        correctSound.play();
+const correctSound = new Audio("audio/incorrect.mp3");
+correctSound.volume = parseFloat(localStorage.getItem("mainVolume") || "1.0");
+correctSound.play();
 
         if (streak === 200) {
             feedback.textContent = "200!";
@@ -202,8 +203,9 @@ function checkAnswer() {
 
         setTimeout(newPuzzle, 1000);
     } else {
-        const incorrectSound = new Audio("audio/correct.wav");
-        incorrectSound.play();
+const incorrectSound = new Audio("audio/correct.wav");
+incorrectSound.volume = parseFloat(localStorage.getItem("mainVolume") || "1.0");
+incorrectSound.play();
 
         feedback.textContent = "Incorrect, use the hints to help you.";
         streak = 0;
