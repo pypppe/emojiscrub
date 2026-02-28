@@ -216,4 +216,18 @@ document.addEventListener("click", function () {
     clickSound.play();
 });
 
+document.addEventListener('keydown', (e) => {
+  if (document.activeElement.tagName === 'INPUT' || 
+      document.activeElement.tagName === 'TEXTAREA') return;
+
+  if (e.key.length !== 1) return;
+
+  const input = document.querySelector('input, textarea');
+  if (!input) return;
+
+  input.focus();
+  input.value += e.key;
+  e.preventDefault();
+});
+
 newPuzzle();
