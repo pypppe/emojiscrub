@@ -56,8 +56,8 @@ panel.innerHTML = `
             <div class="setting-desc">Use system default emojis.</div>
           </div>
           <input type="checkbox" id="disableTwemoji">
-</div>
-      </div>
+        </div>
+    </div>
 
     <div class="tab-content" id="music">
         <div class="setting-item" data-id="disableTyping">
@@ -73,6 +73,13 @@ panel.innerHTML = `
             <div class="setting-desc">Toggle music.</div>
           </div>
           <input type="checkbox" id="enableBgm">
+        </div>
+        <div class="setting-item" data-id="mainVolume">
+          <div class="setting-text">
+            <div class="setting-label">Main Audio</div>
+            <div class="setting-desc">Change how loud the clicking, typing & answers are.</div>
+          </div>
+          <button id="volumeBtn" style="background: rgba(255,255,255,0.1); color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; min-width: 50px;">1.0</button>
         </div>
     </div>
 
@@ -127,8 +134,11 @@ const state = {
   disableTwemoji: localStorage.getItem("disableTwemoji") === "true",
   enableDarkMode: localStorage.getItem("darkMode") === "true",
   disableTyping: localStorage.getItem("disableTyping") === "true",
-  enableBgm: localStorage.getItem("enableBgm") === "true"
+  enableBgm: localStorage.getItem("enableBgm") === "true",
+  mainVolume: localStorage.getItem("mainVolume") || "1.0"
 };
+
+const volumeLevels = ["1.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9"];
 
 const applySettings = () => {
   document.body.classList.toggle("dark-mode", state.enableDarkMode);
@@ -146,6 +156,11 @@ const applySettings = () => {
     else if (id === "disableTwemoji") input.checked = state.disableTwemoji;
     else if (id === "disableTyping") input.checked = state.disableTyping;
   });
+
+  const vol = parseFloat(state.mainVolume);
+  document.querySelectorAll("audio").forEach(audio => {
+    if (audio !== bgMusic) audio.volume = vol;
+  });
 };
 
 panel.addEventListener("click", (e) => {
@@ -153,8 +168,10 @@ panel.addEventListener("click", (e) => {
   if (!item) return;
 
   const id = item.dataset.id;
+
+  if (id === "mainVolume") return;
+
   const checkbox = item.querySelector("input");
-  
   const newValue = !checkbox.checked;
   checkbox.checked = newValue;
   
@@ -172,6 +189,18 @@ panel.addEventListener("click", (e) => {
     localStorage.setItem("disableTyping", newValue);
   }
   
+  applySettings();
+});
+
+const volumeBtn = panel.querySelector("#volumeBtn");
+volumeBtn.textContent = state.mainVolume;
+volumeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const currentIndex = volumeLevels.indexOf(state.mainVolume);
+  const nextIndex = (currentIndex + 1) % volumeLevels.length;
+  state.mainVolume = volumeLevels[nextIndex];
+  volumeBtn.textContent = state.mainVolume;
+  localStorage.setItem("mainVolume", state.mainVolume);
   applySettings();
 });
 
