@@ -31,5 +31,5 @@ export default async function handler(req, res) {
 
   const avatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
 
-  res.redirect(`/?discord_id=${user.id}&username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(avatar)}`);
+  res.redirect(`/accounts?discord_id=${user.id}&username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(avatar)}`);
 }
