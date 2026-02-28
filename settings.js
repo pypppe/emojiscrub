@@ -83,6 +83,9 @@ panel.innerHTML = `
         </div>
     </div>
 
+    <div class="tab-link" onclick="window.open('https://ko-fi.com/zandovo', '_blank')" style="color: rgba(255,255,255,0.5);">Ko-fi</div>
+<div class="tab-link danger-tab" data-tab="danger">Danger Zone</div>
+
     <div class="tab-content" id="danger">
         <div style="background: rgba(255, 77, 77, 0.1); padding: 15px; border-radius: 8px;">
             <p style="font-size: 13px; color: #ff4d4d; margin-bottom: 15px;">Clear all data and reload?</p>
