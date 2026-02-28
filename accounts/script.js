@@ -6,7 +6,7 @@ const signUpBtn = document.getElementById('signUpBtn');
 const popup = document.getElementById('popup');
 const continueBtn = document.getElementById('continueBtn');
 
-const hasAccepted = localStorage.getItem('betaAccepted');
+const hasAccepted = localStorage.getItem('DISCORD_VERIFIED_ZANDOVO');
 
 function isUsernameBlacklisted(name) {
   const blacklist = ['unscrub', 'astrarune', 'zandovo', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
@@ -95,6 +95,19 @@ function updateButtonState() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  // Handle Discord OAuth callback
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('discord_id')) {
+    const username = params.get('username');
+    const avatar = params.get('avatar');
+    const id = params.get('discord_id');
+
+    localStorage.setItem('discord_user', JSON.stringify({ username, avatar, id }));
+    localStorage.setItem('DISCORD_VERIFIED_ZANDOVO', 'true');
+
+    window.history.replaceState({}, document.title, '/');
+  }
+
   if (hasAccepted) {
     const container = document.querySelector('.container');
     container.innerHTML = `
@@ -110,7 +123,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('betaAccepted');
+      localStorage.removeItem('DISCORD_VERIFIED_ZANDOVO');
+      localStorage.removeItem('discord_user');
       location.reload();
     });
   }
@@ -130,7 +144,7 @@ signUpBtn.addEventListener('click', () => {
 });
 
 continueBtn.addEventListener('click', () => {
-  localStorage.setItem('betaAccepted', 'true');
+  localStorage.setItem('DISCORD_VERIFIED_ZANDOVO', 'true');
   popup.style.display = 'none';
   window.location.href = 'https://escrub.astrarune.com';
 });
