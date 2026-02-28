@@ -191,7 +191,11 @@ const toggleModal = (show) => {
   }, 10);
 };
 
-settingsBtn.onclick = () => toggleModal(true);
+if (settingsBtn) settingsBtn.onclick = () => toggleModal(true);
+
+const topbarSettingsBtn = document.getElementById("topbarSettingsBtn");
+if (topbarSettingsBtn) topbarSettingsBtn.onclick = () => toggleModal(true);
+
 panel.querySelector("#closeSettings").onclick = () => toggleModal(false);
 overlay.onclick = (e) => e.target === overlay && toggleModal(false);
 
