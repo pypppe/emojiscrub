@@ -82,8 +82,8 @@ panel.innerHTML = `
           <button id="volumeBtn" style="background: rgba(255,255,255,0.1); color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; min-width: 50px;">1.0</button>
         </div>
     </div>
-    
-<div class="tab-link danger-tab" data-tab="danger">Danger Zone</div>
+
+    <div class="tab-content" id="danger">
         <div style="background: rgba(255, 77, 77, 0.1); padding: 15px; border-radius: 8px;">
             <p style="font-size: 13px; color: #ff4d4d; margin-bottom: 15px;">Clear all data and reload?</p>
             <button id="resetSettings">Reset Data</button>
