@@ -6,8 +6,6 @@ const signUpBtn = document.getElementById('signUpBtn');
 const popup = document.getElementById('popup');
 const continueBtn = document.getElementById('continueBtn');
 
-const hasAccepted = localStorage.getItem('betaAccepted');
-
 // incase i get cancelled in the future the racial slurs are there so no one can make accounts with those words. not beacuse i am a racist loser
 function isUsernameBlacklisted(name) {
   const blacklist = ['unscrub', 'astrarune', 'zandovo', 'pyp', 'pyppe', 'pypppe', 'lily', 'john', 'lol', 'retard', 'nigger', 'faggot', 'nigga', 'niger', 'nigeria', 'tranny', 'whore', 'retigga', 'charlie', 'kirk', 'xDD', 'emojiscrub', 'minecraft', 'roblox', 'abc', 'def']; 
@@ -129,32 +127,21 @@ window.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem('discord_user');
       location.reload();
     });
+
+    return;
   }
-});
 
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('betaAccepted');
-      localStorage.removeItem('discord_user');
-      location.reload();
-    });
-  }
-});
+  usernameInput.addEventListener('input', updateButtonState);
+  passwordInput.addEventListener('input', updateButtonState);
 
-usernameInput.addEventListener('input', updateButtonState);
-passwordInput.addEventListener('input', updateButtonState);
-
-signUpBtn.addEventListener('click', () => {
-  if (!validateUsername() || !validatePassword()) return;
-
-  if (!hasAccepted) {
+  signUpBtn.addEventListener('click', () => {
+    if (!validateUsername() || !validatePassword()) return;
     popup.style.display = 'flex';
-  } else {
-    alert("You've already made an account.");
-  }
-});
+  });
 
-continueBtn.addEventListener('click', () => {
-  localStorage.setItem('betaAccepted', 'true');
-  popup.style.display = 'none';
-  window.location.href = 'https://escrub.astrarune.com';
+  continueBtn.addEventListener('click', () => {
+    localStorage.setItem('betaAccepted', 'true');
+    popup.style.display = 'none';
+    window.location.href = 'https://escrub.astrarune.com';
+  });
 });
