@@ -104,8 +104,10 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem('discord_user', JSON.stringify({ username, avatar, id }));
     localStorage.setItem('betaAccepted', 'true');
 
-    window.history.replaceState({}, document.title, '/');
+    window.history.replaceState({}, document.title, '/accounts');
   }
+
+  const hasAccepted = localStorage.getItem('betaAccepted');
 
   if (hasAccepted) {
     const container = document.querySelector('.container');
@@ -120,6 +122,14 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById('goBackBtn').addEventListener('click', () => {
       window.location.href = 'https://escrub.astrarune.com';
     });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('betaAccepted');
+      localStorage.removeItem('discord_user');
+      location.reload();
+    });
+  }
+});
 
     document.getElementById('logoutBtn').addEventListener('click', () => {
       localStorage.removeItem('betaAccepted');
