@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     source.playbackRate.value = 0.9 + Math.random() * 0.2;
 
     const gainNode = context.createGain();
-    gainNode.gain.value = 4.5;
-
+    const vol = parseFloat(localStorage.getItem("mainVolume") || "1.0");
+gainNode.gain.value = 4.5 * vol;
+    
     source.connect(gainNode).connect(context.destination);
     source.start(0);
   };
