@@ -356,8 +356,3 @@ body, input, button, .feedback {
   opacity: 1;
   transform: translateY(-1px);
 }
-
-#topbarSettingsBtn svg path {
-  fill: black !important;
-  stroke: none !important;
-}
