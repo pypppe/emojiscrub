@@ -57,14 +57,6 @@ panel.innerHTML = `
           </div>
           <input type="checkbox" id="disableTwemoji">
         </div>
-        <div class="setting-item" data-id="enableDarkMode">
-          <div class="setting-text">
-            <div class="setting-label">Dark Mode</div>
-            <div class="setting-desc">Force dark theme across the site.</div>
-          </div>
-          <input type="checkbox" id="enableDarkMode">
-        </div>
-    </div>
 
     <div class="tab-content" id="music">
         <div class="setting-item" data-id="disableTyping">
