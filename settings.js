@@ -56,7 +56,8 @@ panel.innerHTML = `
             <div class="setting-desc">Use system default emojis.</div>
           </div>
           <input type="checkbox" id="disableTwemoji">
-        </div>
+</div>
+      </div>
 
     <div class="tab-content" id="music">
         <div class="setting-item" data-id="disableTyping">
