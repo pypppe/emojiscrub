@@ -39,7 +39,7 @@ const puzzles = [
     { emoji: "🍝🟥", answer: "mario", hint: "Characted by Nintendo." },
     { emoji: "😀🧽", answer: "emojiscrub", hint: "It's the game you're playing." },
     { emoji: "🗝️🛹", answer: "keyboard", hint: "You use this to type on a computer, or phone." },
-    { emoji: "🎄🎁", answer: "christmas present", hint: "Something you get on Christmas." },
+    { emoji: "🎄🎁", answer: "presents", hint: "Something you get on Christmas." },
     { emoji: "📱🎤", answer: "samsung", hint: "Phone brand based off Android." },
     { emoji: "🧑‍🚀🚀", answer: "astronaut", hint: "People like these have visited the Moon." },
     { emoji: "🏳️🔴", answer: "japan", hint: "Country in Asia." },
