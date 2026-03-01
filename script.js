@@ -76,7 +76,6 @@ const puzzles = [
     { emoji: "🇷🇴🇹🇩", answer: "romania", hint: "Romania or Chad?" },
     { emoji: "🇹🇩🇷🇴", answer: "chad", hint: "Romania or Chad?" },
     { emoji: "➕🟥", answer: "switzerland", hint: "A country in Europe." },
-    { emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁷󠁬󠁳󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿", answer: "united kingdom", hint: "This country left Europe." },
     { emoji: "⭐️🦅", answer: "america", hint: "This country made Microsoft, Apple, etc..." },
     { emoji: "🇰🇷🇰🇵", answer: "dmz", hint: "This is called the DeMilitarised Zone" },
     { emoji: "🇮🇹😋", answer: "pizza", hint: "This food usually has pepperoni on it." }
