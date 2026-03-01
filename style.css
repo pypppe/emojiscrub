@@ -22,7 +22,7 @@ body {
     width: 240px;
     font-size: 18px;
     border: 2px solid #000;
-    border-radius: 0;
+    border-radius: 3;
     outline: none;
 }
 
