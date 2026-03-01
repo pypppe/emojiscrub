@@ -43,7 +43,6 @@ const puzzles = [
     { emoji: "🏳️🔴", answer: "japan", hint: "Country in Asia." },
     { emoji: "🔵🔴🏳️", answer: "south korea", hint: "Country in Asia." },
     { emoji: "🇫🇷😋", answer: "baguette", hint: "This food is very popular in France." },
-    { emoji: "💬🤖", answer: "chatgpt", hint: "A Popular AI Chatbot." },
     { emoji: "⛏️🎮", answer: "minecraft", hint: "A game developed by Mojang Studios." },
     { emoji: "🟦🦔", answer: "sonic", hint: "A very popular character created by SEGA." },
     { emoji: "⭐🚩", answer: "north korea", hint: "This country has no freedom, and escaping it can be death." },
