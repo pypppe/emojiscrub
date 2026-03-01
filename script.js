@@ -201,7 +201,7 @@ correctSound.play();
             feedback.textContent = "Correct!";
         }
 
-        setTimeout(newPuzzle, 1000);
+        setTimeout(newPuzzle, 500);
     } else {
 const incorrectSound = new Audio("audio/correct.wav");
 incorrectSound.volume = parseFloat(localStorage.getItem("mainVolume") || "1.0");
