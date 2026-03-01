@@ -53,6 +53,8 @@ suggestions.style.cssText = `
 const commands = [
   { label: "regen", action: () => { hidePalette(); if (typeof newPuzzle === "function") newPuzzle(); } },
   { label: "policy", action: () => { hidePalette(); window.open("https://escrub.astrarune.com/policy", "_blank"); } },
+  { label: "twitter", action: () => { hidePalette(); window.open("https://x.com/zandovo1", "_blank"); } },
+  { label: "github", action: () => { hidePalette(); window.open("https://github.com/pypppe/emojiscrub", "_blank"); } },
 ];
 
 paletteBox.appendChild(paletteInput);
@@ -60,7 +62,7 @@ paletteBox.appendChild(suggestions);
 paletteOverlay.appendChild(paletteBox);
 document.body.appendChild(paletteOverlay);
 
-const placeholderTexts = ["regen", "policy"];
+const placeholderTexts = ["regen", "policy", "twitter", "github"];
 let placeholderIndex = 0;
 let placeholderInterval = null;
 
