@@ -356,3 +356,16 @@ body, input, button, .feedback {
   opacity: 1;
   transform: translateY(-1px);
 }
+
+.esc-hint {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  opacity: 0.5;
+  color: #000;
+  pointer-events: none;
+  z-index: 1000;
+}
